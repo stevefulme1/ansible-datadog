@@ -40,6 +40,10 @@ options:
         description: Whether to validate SSL certificates.
         type: bool
         default: true
+
+    slo_id:
+        description: The slo id.
+        type: str
 """
 
 EXAMPLES = r"""

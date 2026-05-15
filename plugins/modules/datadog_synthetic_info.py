@@ -40,6 +40,10 @@ options:
         description: Whether to validate SSL certificates.
         type: bool
         default: true
+
+    public_id:
+        description: The public id.
+        type: str
 """
 
 EXAMPLES = r"""

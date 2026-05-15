@@ -40,6 +40,10 @@ options:
         description: Whether to validate SSL certificates.
         type: bool
         default: true
+
+    downtime_id:
+        description: The downtime id.
+        type: str
 """
 
 EXAMPLES = r"""
