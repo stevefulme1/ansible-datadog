@@ -1,0 +1,26 @@
+---
+namespace: stevefulme1
+name: datadog
+version: 1.0.0
+readme: README.md
+authors:
+  - Steve Fulmer <sfulmer@redhat.com>
+description: Ansible collection for Datadog monitoring platform - API modules and EDA event sources
+license:
+  - Apache-2.0
+license_file: LICENSE
+tags:
+  - monitoring
+  - datadog
+  - observability
+  - slo
+  - eda
+dependencies: {}
+repository: https://github.com/stevefulme1/ansible-datadog
+documentation: https://github.com/stevefulme1/ansible-datadog
+homepage: https://github.com/stevefulme1/ansible-datadog
+issues: https://github.com/stevefulme1/ansible-datadog/issues
+build_ignore:
+  - .gitignore
+  - .ansible-lint
+  - changelogs/.plugin-cache.yaml

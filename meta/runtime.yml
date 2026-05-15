@@ -1,0 +1,24 @@
+---
+requires_ansible: '>=2.16.0'
+plugin_routing:
+  modules:
+    datadog_monitor:
+      redirect: stevefulme1.datadog.datadog_monitor
+    datadog_monitor_info:
+      redirect: stevefulme1.datadog.datadog_monitor_info
+    datadog_dashboard:
+      redirect: stevefulme1.datadog.datadog_dashboard
+    datadog_dashboard_info:
+      redirect: stevefulme1.datadog.datadog_dashboard_info
+    datadog_slo:
+      redirect: stevefulme1.datadog.datadog_slo
+    datadog_slo_info:
+      redirect: stevefulme1.datadog.datadog_slo_info
+    datadog_synthetic:
+      redirect: stevefulme1.datadog.datadog_synthetic
+    datadog_synthetic_info:
+      redirect: stevefulme1.datadog.datadog_synthetic_info
+    datadog_downtime:
+      redirect: stevefulme1.datadog.datadog_downtime
+    datadog_downtime_info:
+      redirect: stevefulme1.datadog.datadog_downtime_info
