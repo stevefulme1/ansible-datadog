@@ -37,7 +37,7 @@ async def main(queue: asyncio.Queue, args: dict[str, Any]) -> None:
                 item_id = str(item.get("id", ""))
                 if item_id and item_id not in seen:
                     seen.add(item_id)
-                    await queue.put({"datadog": item})
+                    await queue.put(dict([("datadog", item)]))
         except Exception as exc:
             logger.error("Error polling Datadog: %s", exc)
 
