@@ -1,0 +1,14 @@
+---
+# defaults/main.yml for datadog_agent_deploy
+
+# Target host
+datadog_agent_deploy_host: ""
+
+# Authentication
+datadog_agent_deploy_username: ""
+datadog_agent_deploy_password: ""
+datadog_agent_deploy_api_key: ""
+
+# Behavior
+datadog_agent_deploy_validate_certs: true
+datadog_agent_deploy_state: present

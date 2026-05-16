@@ -1,0 +1,14 @@
+---
+# defaults/main.yml for datadog_integration_setup
+
+# Target host
+datadog_integration_setup_host: ""
+
+# Authentication
+datadog_integration_setup_username: ""
+datadog_integration_setup_password: ""
+datadog_integration_setup_api_key: ""
+
+# Behavior
+datadog_integration_setup_validate_certs: true
+datadog_integration_setup_state: present

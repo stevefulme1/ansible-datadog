@@ -1,0 +1,27 @@
+---
+argument_specs:
+  main:
+    short_description: "Set up log collection and processing pipelines"
+    options:
+      datadog_log_pipeline_host:
+        description: Target host address
+        type: str
+        required: true
+      datadog_log_pipeline_username:
+        description: Authentication username
+        type: str
+      datadog_log_pipeline_password:
+        description: Authentication password
+        type: str
+      datadog_log_pipeline_api_key:
+        description: API key for authentication
+        type: str
+      datadog_log_pipeline_validate_certs:
+        description: Validate SSL certificates
+        type: bool
+        default: true
+      datadog_log_pipeline_state:
+        description: Desired state
+        type: str
+        default: present
+        choices: [present, absent]

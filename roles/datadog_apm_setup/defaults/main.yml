@@ -1,0 +1,14 @@
+---
+# defaults/main.yml for datadog_apm_setup
+
+# Target host
+datadog_apm_setup_host: ""
+
+# Authentication
+datadog_apm_setup_username: ""
+datadog_apm_setup_password: ""
+datadog_apm_setup_api_key: ""
+
+# Behavior
+datadog_apm_setup_validate_certs: true
+datadog_apm_setup_state: present

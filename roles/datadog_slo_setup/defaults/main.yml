@@ -1,0 +1,14 @@
+---
+# defaults/main.yml for datadog_slo_setup
+
+# Target host
+datadog_slo_setup_host: ""
+
+# Authentication
+datadog_slo_setup_username: ""
+datadog_slo_setup_password: ""
+datadog_slo_setup_api_key: ""
+
+# Behavior
+datadog_slo_setup_validate_certs: true
+datadog_slo_setup_state: present

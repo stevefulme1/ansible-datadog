@@ -1,0 +1,16 @@
+---
+# tasks/main.yml for datadog_dashboard_setup
+# Create service dashboards with standard widgets
+
+- name: Validate required variables
+  ansible.builtin.assert:
+    that:
+      - datadog_dashboard_setup_host is defined
+    fail_msg: "datadog_dashboard_setup_host must be defined"
+    quiet: true
+
+- name: Execute datadog dashboard setup
+  ansible.builtin.debug:
+    msg: >-
+      Create service dashboards with standard widgets.
+      Target: {{ datadog_dashboard_setup_host }}

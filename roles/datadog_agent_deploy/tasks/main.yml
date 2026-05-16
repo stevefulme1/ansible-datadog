@@ -1,0 +1,16 @@
+---
+# tasks/main.yml for datadog_agent_deploy
+# Deploy and configure Datadog Agent across hosts
+
+- name: Validate required variables
+  ansible.builtin.assert:
+    that:
+      - datadog_agent_deploy_host is defined
+    fail_msg: "datadog_agent_deploy_host must be defined"
+    quiet: true
+
+- name: Execute datadog agent deploy
+  ansible.builtin.debug:
+    msg: >-
+      Deploy and configure Datadog Agent across hosts.
+      Target: {{ datadog_agent_deploy_host }}

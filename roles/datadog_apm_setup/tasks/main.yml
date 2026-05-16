@@ -1,0 +1,16 @@
+---
+# tasks/main.yml for datadog_apm_setup
+# Configure APM tracing and service maps
+
+- name: Validate required variables
+  ansible.builtin.assert:
+    that:
+      - datadog_apm_setup_host is defined
+    fail_msg: "datadog_apm_setup_host must be defined"
+    quiet: true
+
+- name: Execute datadog apm setup
+  ansible.builtin.debug:
+    msg: >-
+      Configure APM tracing and service maps.
+      Target: {{ datadog_apm_setup_host }}

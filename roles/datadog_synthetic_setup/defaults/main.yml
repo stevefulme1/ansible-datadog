@@ -1,0 +1,14 @@
+---
+# defaults/main.yml for datadog_synthetic_setup
+
+# Target host
+datadog_synthetic_setup_host: ""
+
+# Authentication
+datadog_synthetic_setup_username: ""
+datadog_synthetic_setup_password: ""
+datadog_synthetic_setup_api_key: ""
+
+# Behavior
+datadog_synthetic_setup_validate_certs: true
+datadog_synthetic_setup_state: present

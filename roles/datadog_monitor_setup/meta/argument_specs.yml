@@ -1,0 +1,27 @@
+---
+argument_specs:
+  main:
+    short_description: "Create standard monitoring coverage for a service"
+    options:
+      datadog_monitor_setup_host:
+        description: Target host address
+        type: str
+        required: true
+      datadog_monitor_setup_username:
+        description: Authentication username
+        type: str
+      datadog_monitor_setup_password:
+        description: Authentication password
+        type: str
+      datadog_monitor_setup_api_key:
+        description: API key for authentication
+        type: str
+      datadog_monitor_setup_validate_certs:
+        description: Validate SSL certificates
+        type: bool
+        default: true
+      datadog_monitor_setup_state:
+        description: Desired state
+        type: str
+        default: present
+        choices: [present, absent]

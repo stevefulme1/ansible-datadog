@@ -1,0 +1,16 @@
+---
+# tasks/main.yml for datadog_incident_management
+# Configure incident workflows and teams
+
+- name: Validate required variables
+  ansible.builtin.assert:
+    that:
+      - datadog_incident_management_host is defined
+    fail_msg: "datadog_incident_management_host must be defined"
+    quiet: true
+
+- name: Execute datadog incident management
+  ansible.builtin.debug:
+    msg: >-
+      Configure incident workflows and teams.
+      Target: {{ datadog_incident_management_host }}
