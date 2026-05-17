@@ -104,14 +104,30 @@ def main():
     resource_id = module.params.get("monitor_id")
 
     if state == "present":
+        existing = None
         if resource_id:
-            result = client.update("composite_monitor", resource_id, module.params)
+            existing = client.get("composite_monitor", resource_id)
+        elif module.params.get("name"):
+            candidates = client.list("composite_monitor", {{"name": module.params["name"]}})
+            if candidates:
+                existing = candidates[0]
+
+        if existing:
+            if module.check_mode:
+                module.exit_json(changed=False, composite_monitor=existing)
+            result = client.update("composite_monitor", resource_id or existing.get("id", ""), module.params)
+            module.exit_json(changed=True, composite_monitor=result)
         else:
             if module.check_mode:
                 module.exit_json(changed=True)
             result = client.create("composite_monitor", module.params)
-        module.exit_json(changed=True, composite_monitor=result)
+            module.exit_json(changed=True, composite_monitor=result)
     else:
+        existing = None
+        if resource_id:
+            existing = client.get("composite_monitor", resource_id)
+        if not existing:
+            module.exit_json(changed=False)
         if module.check_mode:
             module.exit_json(changed=True)
         client.delete("composite_monitor", resource_id)

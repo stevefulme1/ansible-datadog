@@ -104,14 +104,30 @@ def main():
     resource_id = module.params.get("integration_id")
 
     if state == "present":
+        existing = None
         if resource_id:
-            result = client.update("integration", resource_id, module.params)
+            existing = client.get("integration", resource_id)
+        elif module.params.get("name"):
+            candidates = client.list("integration", {{"name": module.params["name"]}})
+            if candidates:
+                existing = candidates[0]
+
+        if existing:
+            if module.check_mode:
+                module.exit_json(changed=False, integration=existing)
+            result = client.update("integration", resource_id or existing.get("id", ""), module.params)
+            module.exit_json(changed=True, integration=result)
         else:
             if module.check_mode:
                 module.exit_json(changed=True)
             result = client.create("integration", module.params)
-        module.exit_json(changed=True, integration=result)
+            module.exit_json(changed=True, integration=result)
     else:
+        existing = None
+        if resource_id:
+            existing = client.get("integration", resource_id)
+        if not existing:
+            module.exit_json(changed=False)
         if module.check_mode:
             module.exit_json(changed=True)
         client.delete("integration", resource_id)

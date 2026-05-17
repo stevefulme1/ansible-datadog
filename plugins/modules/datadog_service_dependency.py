@@ -104,14 +104,30 @@ def main():
     resource_id = module.params.get("dep_id")
 
     if state == "present":
+        existing = None
         if resource_id:
-            result = client.update("service_dependency", resource_id, module.params)
+            existing = client.get("service_dependency", resource_id)
+        elif module.params.get("name"):
+            candidates = client.list("service_dependency", {{"name": module.params["name"]}})
+            if candidates:
+                existing = candidates[0]
+
+        if existing:
+            if module.check_mode:
+                module.exit_json(changed=False, service_dependency=existing)
+            result = client.update("service_dependency", resource_id or existing.get("id", ""), module.params)
+            module.exit_json(changed=True, service_dependency=result)
         else:
             if module.check_mode:
                 module.exit_json(changed=True)
             result = client.create("service_dependency", module.params)
-        module.exit_json(changed=True, service_dependency=result)
+            module.exit_json(changed=True, service_dependency=result)
     else:
+        existing = None
+        if resource_id:
+            existing = client.get("service_dependency", resource_id)
+        if not existing:
+            module.exit_json(changed=False)
         if module.check_mode:
             module.exit_json(changed=True)
         client.delete("service_dependency", resource_id)

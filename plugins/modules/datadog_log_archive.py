@@ -104,14 +104,30 @@ def main():
     resource_id = module.params.get("archive_id")
 
     if state == "present":
+        existing = None
         if resource_id:
-            result = client.update("log_archive", resource_id, module.params)
+            existing = client.get("log_archive", resource_id)
+        elif module.params.get("name"):
+            candidates = client.list("log_archive", {{"name": module.params["name"]}})
+            if candidates:
+                existing = candidates[0]
+
+        if existing:
+            if module.check_mode:
+                module.exit_json(changed=False, log_archive=existing)
+            result = client.update("log_archive", resource_id or existing.get("id", ""), module.params)
+            module.exit_json(changed=True, log_archive=result)
         else:
             if module.check_mode:
                 module.exit_json(changed=True)
             result = client.create("log_archive", module.params)
-        module.exit_json(changed=True, log_archive=result)
+            module.exit_json(changed=True, log_archive=result)
     else:
+        existing = None
+        if resource_id:
+            existing = client.get("log_archive", resource_id)
+        if not existing:
+            module.exit_json(changed=False)
         if module.check_mode:
             module.exit_json(changed=True)
         client.delete("log_archive", resource_id)
