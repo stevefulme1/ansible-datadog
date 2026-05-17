@@ -18,8 +18,8 @@ def mock_api_client():
     """Mock API client for datadog_metric_metadata."""
     client = MagicMock()
     client.get.return_value = None
-    client.create.return_value = {"metric_name": "res-123", "metric_name": "test-metric_metadata"}
-    client.update.return_value = {"metric_name": "res-123", "metric_name": "test-metric_metadata-updated"}
+    client.create.return_value = {"metric_name": "test-metric_metadata"}
+    client.update.return_value = {"metric_name": "test-metric_metadata-updated"}
     client.delete.return_value = None
     client.list.return_value = []
     return client
@@ -29,7 +29,6 @@ def mock_api_client():
 def existing_resource():
     """Return a dict representing an existing metric_metadata."""
     return {
-        "metric_name": "res-123",
         "metric_name": "test-metric_metadata",
         "state": "active",
     }
@@ -41,7 +40,7 @@ class TestCreateMetricMetadata:
     def test_create_returns_resource(self, mock_api_client):
         """Verify create returns resource dict with expected fields."""
         result = mock_api_client.create("metric_metadata", {"metric_name": "test-metric_metadata"})
-        assert result["metric_name"] == "res-123"
+        assert result["metric_name"] == "test-metric_metadata"
         assert result["metric_name"] == "test-metric_metadata"
         mock_api_client.create.assert_called_once()
 
@@ -143,7 +142,7 @@ class TestGetMetricMetadata:
         """Verify get returns resource when it exists."""
         mock_api_client.get.return_value = existing_resource
         result = mock_api_client.get("metric_metadata", "res-123")
-        assert result["metric_name"] == "res-123"
+        assert result["metric_name"] == "test-metric_metadata"
 
     def test_get_nonexistent(self, mock_api_client):
         """Verify get returns None for missing resource."""
@@ -165,8 +164,8 @@ class TestListMetricMetadata:
     def test_list_returns_all(self, mock_api_client):
         """Verify list returns all resources."""
         mock_api_client.list.return_value = [
-            {"metric_name": "1", "metric_name": "first"},
-            {"metric_name": "2", "metric_name": "second"},
+            {"metric_name": "first"},
+            {"metric_name": "second"},
         ]
         result = mock_api_client.list("metric_metadata")
         assert len(result) == 2
@@ -178,7 +177,7 @@ class TestListMetricMetadata:
 
     def test_list_with_filter(self, mock_api_client):
         """Verify list applies filters."""
-        mock_api_client.list.return_value = [{"metric_name": "1", "metric_name": "match"}]
+        mock_api_client.list.return_value = [{"metric_name": "match"}]
         result = mock_api_client.list("metric_metadata", filters={"metric_name": "match"})
         assert len(result) == 1
 
