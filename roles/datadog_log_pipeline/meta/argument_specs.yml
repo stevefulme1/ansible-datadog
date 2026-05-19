@@ -13,9 +13,11 @@ argument_specs:
       datadog_log_pipeline_password:
         description: Authentication password
         type: str
+        no_log: true
       datadog_log_pipeline_api_key:
         description: API key for authentication
         type: str
+        no_log: true
       datadog_log_pipeline_validate_certs:
         description: Validate SSL certificates
         type: bool
