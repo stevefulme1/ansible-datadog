@@ -6,8 +6,11 @@
   stevefulme1.datadog.datadog_monitor:
     host: "{{ datadog_host }}"
     api_key: "{{ datadog_api_key }}"
+    app_key: "{{ datadog_app_key | default(omit) }}"
     state: present
     name: "ansible-test-{{ resource_prefix }}"
+    monitor_type: metric alert
+    query: "avg(last_5m):avg:system.cpu.user{*} > 90"
     validate_certs: "{{ validate_certs | default(true) }}"
   check_mode: true
   register: check_result
@@ -16,13 +19,17 @@
   ansible.builtin.assert:
     that:
       - check_result is changed
+      - check_result.diff is defined
 
 - name: Create monitor
   stevefulme1.datadog.datadog_monitor:
     host: "{{ datadog_host }}"
     api_key: "{{ datadog_api_key }}"
+    app_key: "{{ datadog_app_key | default(omit) }}"
     state: present
     name: "ansible-test-{{ resource_prefix }}"
+    monitor_type: metric alert
+    query: "avg(last_5m):avg:system.cpu.user{*} > 90"
     validate_certs: "{{ validate_certs | default(true) }}"
   register: create_result
 
@@ -31,17 +38,21 @@
     that:
       - create_result is changed
       - create_result.monitor is defined
+      - create_result.monitor.id is defined
 
 - name: Create monitor again (idempotency)
   stevefulme1.datadog.datadog_monitor:
     host: "{{ datadog_host }}"
     api_key: "{{ datadog_api_key }}"
+    app_key: "{{ datadog_app_key | default(omit) }}"
     state: present
     name: "ansible-test-{{ resource_prefix }}"
+    monitor_type: metric alert
+    query: "avg(last_5m):avg:system.cpu.user{*} > 90"
     validate_certs: "{{ validate_certs | default(true) }}"
   register: idem_result
 
-- name: Verify idempotent create
+- name: Verify idempotent create returns changed=false
   ansible.builtin.assert:
     that:
       - idem_result is not changed
@@ -50,8 +61,9 @@
   stevefulme1.datadog.datadog_monitor:
     host: "{{ datadog_host }}"
     api_key: "{{ datadog_api_key }}"
+    app_key: "{{ datadog_app_key | default(omit) }}"
     state: absent
-    name: "ansible-test-{{ resource_prefix }}"
+    monitor_id: "{{ create_result.monitor.id }}"
     validate_certs: "{{ validate_certs | default(true) }}"
   check_mode: true
   register: delete_check
@@ -65,8 +77,9 @@
   stevefulme1.datadog.datadog_monitor:
     host: "{{ datadog_host }}"
     api_key: "{{ datadog_api_key }}"
+    app_key: "{{ datadog_app_key | default(omit) }}"
     state: absent
-    name: "ansible-test-{{ resource_prefix }}"
+    monitor_id: "{{ create_result.monitor.id }}"
     validate_certs: "{{ validate_certs | default(true) }}"
   register: delete_result
 
@@ -79,12 +92,13 @@
   stevefulme1.datadog.datadog_monitor:
     host: "{{ datadog_host }}"
     api_key: "{{ datadog_api_key }}"
+    app_key: "{{ datadog_app_key | default(omit) }}"
     state: absent
-    name: "ansible-test-{{ resource_prefix }}"
+    monitor_id: "{{ create_result.monitor.id }}"
     validate_certs: "{{ validate_certs | default(true) }}"
   register: delete_idem
 
-- name: Verify idempotent delete
+- name: Verify idempotent delete returns changed=false
   ansible.builtin.assert:
     that:
       - delete_idem is not changed
