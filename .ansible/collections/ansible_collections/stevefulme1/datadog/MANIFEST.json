@@ -1,0 +1,35 @@
+{
+ "collection_info": {
+  "namespace": "stevefulme1",
+  "name": "datadog",
+  "version": "0.1.0",
+  "authors": [
+   "Steve Fulmer (@stevefulme1)"
+  ],
+  "readme": "README.md",
+  "tags": [
+   "datadog",
+   "api",
+   "v1",
+   "collection"
+  ],
+  "description": "Ansible collection for the Datadog API monitoring and observability",
+  "license": [
+   "GPL-3.0-or-later"
+  ],
+  "license_file": null,
+  "dependencies": {},
+  "repository": "https://github.com/stevefulme1/ansible-datadog",
+  "documentation": null,
+  "homepage": null,
+  "issues": null
+ },
+ "file_manifest_file": {
+  "name": "FILES.json",
+  "ftype": "file",
+  "chksum_type": "sha256",
+  "chksum_sha256": "0c4f162cf6ccf22eef52b570d75c99cbff8d019e1190f72f73b1f0bc78f33414",
+  "format": 1
+ },
+ "format": 1
+}

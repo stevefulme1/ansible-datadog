@@ -4,8 +4,8 @@ name: datadog
 version: 0.1.0
 readme: README.md
 authors:
-  - Auto-generated from Datadog API spec
-description: Ansible collection for the Datadog API V1 Collection API
+  - Steve Fulmer (@stevefulme1)
+description: Ansible collection for the Datadog API monitoring and observability
 license:
   - GPL-3.0-or-later
 tags:
