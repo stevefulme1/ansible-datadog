@@ -1,11 +1,11 @@
 ---
 namespace: stevefulme1
 name: datadog
-version: 2.1.1
+version: 0.1.0
 readme: README.md
 authors:
   - Steve Fulmer <sfulmer@redhat.com>
-description: Ansible collection for Datadog monitoring platform - API modules and EDA event sources
+description: Ansible collection for Datadog monitoring platform - API modules and EDA event sources Status: Pre-release. Under active development.
 license_file: LICENSE
 tags:
   - monitoring
