@@ -4,21 +4,17 @@ name: datadog
 version: 0.1.0
 readme: README.md
 authors:
-  - Steve Fulmer <sfulmer@redhat.com>
-description: Ansible collection for Datadog monitoring platform - API modules and EDA event sources Status: Pre-release. Under active development.
-license_file: LICENSE
+  - Auto-generated from Datadog API spec
+description: Ansible collection for the Datadog API V1 Collection API
+license:
+  - GPL-3.0-or-later
 tags:
-  - monitoring
   - datadog
-  - observability
-  - slo
-  - eda
-dependencies: {}
+  - api
+  - v1
+  - collection
 repository: https://github.com/stevefulme1/ansible-datadog
-documentation: https://github.com/stevefulme1/ansible-datadog
-homepage: https://github.com/stevefulme1/ansible-datadog
-issues: https://github.com/stevefulme1/ansible-datadog/issues
 build_ignore:
-  - .gitignore
-  - .ansible-lint
-  - changelogs/.plugin-cache.yaml
+  - tests/output
+  - .tox
+  - .venv
