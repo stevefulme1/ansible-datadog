@@ -8,6 +8,7 @@ authors:
 description: Ansible collection for the Datadog API monitoring and observability
 license:
   - GPL-3.0-or-later
+  - GPL-3.0-or-later
 tags:
   - datadog
   - api
