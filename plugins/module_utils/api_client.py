@@ -63,11 +63,9 @@ class Client:
             "Accept": "application/json",
         }
 
-
         headers["DD-API-KEY"] = self.module.params["api_key"]
         if self.module.params.get("application_key"):
             headers["DD-APPLICATION-KEY"] = self.module.params["application_key"]
-
 
         return headers
 

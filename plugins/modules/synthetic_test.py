@@ -5,6 +5,12 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
+from ansible_collections.stevefulme1.datadog.plugins.module_utils.api_client import (
+    Client,
+    ClientError,
+    argument_spec as auth_argument_spec,
+)
+from ansible.module_utils.basic import AnsibleModule
 
 __metaclass__ = type
 
@@ -33,29 +39,20 @@ options:
     type: list
     elements: str
 
-
-
-
-
 extends_documentation_fragment:
   - stevefulme1.datadog.auth
 """
 
 EXAMPLES = r"""
 
-
 - name: Update a synthetic_test
   stevefulme1.datadog.synthetic_test:
     monitor_id: "existing_id"
 
-
     data: "updated_data"
 
-
     state: present
-  # API:  
-
-
+  # API:
 
 """
 
@@ -67,13 +64,11 @@ config:
   returned: success
   type: dict
 
-
 creator:
   description: >-
     Object describing the creator of the shared element.
   returned: success
   type: dict
-
 
 locations:
   description: >-
@@ -81,13 +76,11 @@ locations:
   returned: success
   type: list
 
-
 message:
   description: >-
     Notification message associated with the test.
   returned: success
   type: str
-
 
 monitor_id:
   description: >-
@@ -95,13 +88,11 @@ monitor_id:
   returned: success
   type: int
 
-
 name:
   description: >-
     Name of the test.
   returned: success
   type: str
-
 
 options:
   description: >-
@@ -109,13 +100,11 @@ options:
   returned: success
   type: dict
 
-
 public_id:
   description: >-
     The test public ID.
   returned: success
   type: str
-
 
 status:
   description: >-
@@ -123,13 +112,11 @@ status:
   returned: success
   type: str
 
-
 subtype:
   description: >-
     The subtype of the Synthetic API test, http, ssl, tcp, dns, icmp, udp, websocket, grpc or multi.
   returned: success
   type: str
-
 
 tags:
   description: >-
@@ -137,22 +124,13 @@ tags:
   returned: success
   type: list
 
-
 type:
   description: >-
     Type of the Synthetic test.
   returned: success
   type: str
 
-
 """
-
-from ansible.module_utils.basic import AnsibleModule
-from ansible_collections.stevefulme1.datadog.plugins.module_utils.api_client import (
-    Client,
-    ClientError,
-    argument_spec as auth_argument_spec,
-)
 
 
 def get_current_state(client, module):
@@ -179,7 +157,6 @@ def get_current_state(client, module):
         return None
     except ClientError:
         return None
-
 
 
 def needs_update(current, desired):
@@ -213,10 +190,6 @@ def main():
 
             data=dict(
                 type="list", elements="str",
-
-
-
-
 
             ),
 
@@ -253,7 +226,6 @@ def main():
                     )
                     result.update(response if isinstance(response, dict) else {})
 
-
             elif needs_update(current, desired):
                 # Resource exists but needs updating
                 result["changed"] = True
@@ -271,7 +243,6 @@ def main():
                         data=desired,
                     )
                     result.update(response if isinstance(response, dict) else {})
-
 
             else:
                 # Resource exists and is up-to-date
@@ -300,7 +271,6 @@ def main():
 
                 result["type"] = current.get("type")
 
-
         elif state == "absent":
             if current is not None:
                 result["changed"] = True
@@ -314,7 +284,6 @@ def main():
                         data=desired,
                     )
                     result.update(response if isinstance(response, dict) else {})
-
 
     except ClientError as e:
         module.fail_json(msg=str(e), **result)

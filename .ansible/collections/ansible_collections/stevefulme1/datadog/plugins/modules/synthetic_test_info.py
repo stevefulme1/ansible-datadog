@@ -32,9 +32,6 @@ options:
     type: str
     required: false
 
-
-
-
   page:
     description:
       - Page number for paginated results.
@@ -61,12 +58,10 @@ EXAMPLES = r"""
   stevefulme1.datadog.synthetic_test_info:
   register: result
 
-
 - name: List synthetic_test resources filtered by name
   stevefulme1.datadog.synthetic_test_info:
     name: "my_synthetic_test"
   register: result
-
 
 - name: List synthetic_test resources with pagination
   stevefulme1.datadog.synthetic_test_info:
@@ -88,72 +83,60 @@ synthetic_tests:
         Configuration object for a Synthetic test.
       type: dict
 
-
     creator:
       description: >-
         Object describing the creator of the shared element.
       type: dict
-
 
     locations:
       description: >-
         Array of locations used to run the test.
       type: list
 
-
     message:
       description: >-
         Notification message associated with the test.
       type: str
-
 
     monitor_id:
       description: >-
         The associated monitor ID.
       type: int
 
-
     name:
       description: >-
         Name of the test.
       type: str
-
 
     options:
       description: >-
         Object describing the extra options for a Synthetic test.
       type: dict
 
-
     public_id:
       description: >-
         The test public ID.
       type: str
-
 
     status:
       description: >-
         Define whether you want to start (live) or pause (paused) a Synthetic test.
       type: str
 
-
     subtype:
       description: >-
         The subtype of the Synthetic API test, http, ssl, tcp, dns, icmp, udp, websocket, grpc or multi.
       type: str
-
 
     tags:
       description: >-
         Array of tags attached to the test.
       type: list
 
-
     type:
       description: >-
         Type of the Synthetic test.
       type: str
-
 
 """
 
@@ -163,7 +146,6 @@ from ansible_collections.stevefulme1.datadog.plugins.module_utils.api_client imp
     ClientError,
     argument_spec as auth_argument_spec,
 )
-
 
 def fetch_single(client, identifier):
     """Retrieve a single synthetic_test by identifier."""
@@ -177,22 +159,14 @@ def fetch_single(client, identifier):
             return item
     return None
 
-
-
 def fetch_list(client, module):
     """List synthetic_test resources with optional filtering and pagination."""
 
     params = {}
 
-
     name_filter = module.params.get("name")
     if name_filter is not None:
         params["name"] = name_filter
-
-
-
-
-
 
     page = module.params.get("page")
     page_size = module.params.get("page_size")
@@ -209,8 +183,6 @@ def fetch_list(client, module):
     else:
         return client.get_paginated("/api/v1/synthetics/tests", params=params)
 
-
-
 def main():
     spec = auth_argument_spec()
     spec.update(
@@ -218,9 +190,6 @@ def main():
             monitor_id=dict(type="str", required=False),
 
             name=dict(type="str", required=False),
-
-
-
 
             page=dict(type="int", required=False),
             page_size=dict(type="int", required=False),
@@ -255,7 +224,6 @@ def main():
         module.fail_json(msg=str(e), **result)
 
     module.exit_json(**result)
-
 
 if __name__ == "__main__":
     main()

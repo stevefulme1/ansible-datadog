@@ -32,27 +32,6 @@ options:
     type: str
     required: false
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   page:
     description:
       - Page number for paginated results.
@@ -79,12 +58,10 @@ EXAMPLES = r"""
   stevefulme1.datadog.synthetic_variable_info:
   register: result
 
-
 - name: List synthetic_variable resources filtered by name
   stevefulme1.datadog.synthetic_variable_info:
     name: "my_synthetic_variable"
   register: result
-
 
 - name: List synthetic_variable resources with pagination
   stevefulme1.datadog.synthetic_variable_info:
@@ -106,60 +83,50 @@ synthetic_variables:
         Attributes of the global variable.
       type: dict
 
-
     description:
       description: >-
         Description of the global variable.
       type: str
-
 
     id:
       description: >-
         Unique identifier of the global variable.
       type: str
 
-
     is_fido:
       description: >-
         Determines if the global variable is a FIDO variable.
       type: bool
-
 
     is_totp:
       description: >-
         Determines if the global variable is a TOTP/MFA variable.
       type: bool
 
-
     name:
       description: >-
         Name of the global variable. Unique across Synthetic global variables.
       type: str
-
 
     parse_test_options:
       description: >-
         Parser options to use for retrieving a Synthetic global variable from a Synthetic test. Used in...
       type: dict
 
-
     parse_test_public_id:
       description: >-
         A Synthetic test ID to use as a test to generate the variable value.
       type: str
-
 
     tags:
       description: >-
         Tags of the global variable.
       type: list
 
-
     value:
       description: >-
         Value of the global variable.
       type: dict
-
 
 """
 
@@ -169,7 +136,6 @@ from ansible_collections.stevefulme1.datadog.plugins.module_utils.api_client imp
     ClientError,
     argument_spec as auth_argument_spec,
 )
-
 
 def fetch_single(client, identifier):
     """Retrieve a single synthetic_variable by identifier."""
@@ -183,40 +149,14 @@ def fetch_single(client, identifier):
             return item
     return None
 
-
-
 def fetch_list(client, module):
     """List synthetic_variable resources with optional filtering and pagination."""
 
     params = {}
 
-
     name_filter = module.params.get("name")
     if name_filter is not None:
         params["name"] = name_filter
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     page = module.params.get("page")
     page_size = module.params.get("page_size")
@@ -233,8 +173,6 @@ def fetch_list(client, module):
     else:
         return client.get_paginated("/api/v1/synthetics/variables", params=params)
 
-
-
 def main():
     spec = auth_argument_spec()
     spec.update(
@@ -242,27 +180,6 @@ def main():
             id=dict(type="str", required=False),
 
             name=dict(type="str", required=False),
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
             page=dict(type="int", required=False),
             page_size=dict(type="int", required=False),
@@ -297,7 +214,6 @@ def main():
         module.fail_json(msg=str(e), **result)
 
     module.exit_json(**result)
-
 
 if __name__ == "__main__":
     main()

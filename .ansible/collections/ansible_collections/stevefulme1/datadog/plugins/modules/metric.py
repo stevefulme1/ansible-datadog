@@ -32,19 +32,11 @@ options:
         Metric description.
     type: str
 
-
-
-
-
   integration:
     description:
       - >-
         Name of the integration that sent the metric if applicable.
     type: str
-
-
-
-
 
   per_unit:
     description:
@@ -52,19 +44,11 @@ options:
         Per unit of the metric such as second in bytes per second.
     type: str
 
-
-
-
-
   short_name:
     description:
       - >-
         A more human-readable and abbreviated version of the metric name.
     type: str
-
-
-
-
 
   statsd_interval:
     description:
@@ -72,19 +56,11 @@ options:
         StatsD flush interval of the metric in seconds if applicable.
     type: int
 
-
-
-
-
   type:
     description:
       - >-
         Metric type such as gauge or rate.
     type: str
-
-
-
-
 
   unit:
     description:
@@ -92,53 +68,32 @@ options:
         Primary unit of the metric such as byte or operation.
     type: str
 
-
-
-
-
 extends_documentation_fragment:
   - stevefulme1.datadog.auth
 """
 
 EXAMPLES = r"""
 
-
 - name: Update a metric
   stevefulme1.datadog.metric:
     id: "existing_id"
 
-
     description: "updated_description"
-
-
 
     integration: "updated_integration"
 
-
-
     per_unit: "updated_per_unit"
-
-
 
     short_name: "updated_short_name"
 
-
-
     statsd_interval: "updated_statsd_interval"
-
-
 
     type: "updated_type"
 
-
-
     unit: "updated_unit"
 
-
     state: present
-  # API:  
-
-
+  # API:
 
 """
 
@@ -150,13 +105,11 @@ description:
   returned: success
   type: str
 
-
 integration:
   description: >-
     Name of the integration that sent the metric if applicable.
   returned: success
   type: str
-
 
 per_unit:
   description: >-
@@ -164,13 +117,11 @@ per_unit:
   returned: success
   type: str
 
-
 short_name:
   description: >-
     A more human-readable and abbreviated version of the metric name.
   returned: success
   type: str
-
 
 statsd_interval:
   description: >-
@@ -178,20 +129,17 @@ statsd_interval:
   returned: success
   type: int
 
-
 type:
   description: >-
     Metric type such as gauge or rate.
   returned: success
   type: str
 
-
 unit:
   description: >-
     Primary unit of the metric such as byte or operation.
   returned: success
   type: str
-
 
 """
 
@@ -201,7 +149,6 @@ from ansible_collections.stevefulme1.datadog.plugins.module_utils.api_client imp
     ClientError,
     argument_spec as auth_argument_spec,
 )
-
 
 def get_current_state(client, module):
     """Retrieve the current state of the metric via GET."""
@@ -227,8 +174,6 @@ def get_current_state(client, module):
     except ClientError:
         return None
 
-
-
 def needs_update(current, desired):
     """Compare current state against desired params and return True if an update is needed."""
     if current is None:
@@ -240,7 +185,6 @@ def needs_update(current, desired):
         if current_value != value:
             return True
     return False
-
 
 def build_payload(module):
     """Build the API request payload from module params."""
@@ -269,7 +213,6 @@ def build_payload(module):
 
     return payload
 
-
 def main():
     spec = auth_argument_spec()
     spec.update(
@@ -279,63 +222,35 @@ def main():
             description=dict(
                 type="str",
 
-
-
-
-
             ),
 
             integration=dict(
                 type="str",
-
-
-
-
 
             ),
 
             per_unit=dict(
                 type="str",
 
-
-
-
-
             ),
 
             short_name=dict(
                 type="str",
-
-
-
-
 
             ),
 
             statsd_interval=dict(
                 type="int",
 
-
-
-
-
             ),
 
             type=dict(
                 type="str",
 
-
-
-
-
             ),
 
             unit=dict(
                 type="str",
-
-
-
-
 
             ),
 
@@ -377,7 +292,6 @@ def main():
                     else:
                         module.fail_json(msg="name is required to update metric metadata")
 
-
             elif needs_update(current, desired):
                 # Resource exists but needs updating
                 result["changed"] = True
@@ -393,7 +307,6 @@ def main():
                         data=desired,
                     )
                     result.update(response if isinstance(response, dict) else {})
-
 
             else:
                 # Resource exists and is up-to-date
@@ -412,7 +325,6 @@ def main():
 
                 result["unit"] = current.get("unit")
 
-
         elif state == "absent":
             if current is not None:
                 result["changed"] = True
@@ -423,12 +335,10 @@ def main():
                     module.fail_json(msg="Datadog metrics cannot be deleted via API. "
                                          "Metrics exist as long as data is submitted.")
 
-
     except ClientError as e:
         module.fail_json(msg=str(e), **result)
 
     module.exit_json(**result)
-
 
 if __name__ == "__main__":
     main()

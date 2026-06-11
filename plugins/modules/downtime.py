@@ -5,6 +5,12 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
+from ansible_collections.stevefulme1.datadog.plugins.module_utils.api_client import (
+    Client,
+    ClientError,
+    argument_spec as auth_argument_spec,
+)
+from ansible.module_utils.basic import AnsibleModule
 
 __metaclass__ = type
 
@@ -32,19 +38,11 @@ options:
         If a scheduled downtime currently exists.
     type: bool
 
-
-
-
-
   active_child:
     description:
       - >-
         The downtime object definition of the active child for the original parent recurring downtime....
     type: dict
-
-
-
-
 
   canceled:
     description:
@@ -52,19 +50,11 @@ options:
         If a scheduled downtime is canceled.
     type: int
 
-
-
-
-
   creator_id:
     description:
       - >-
         User ID of the downtime creator.
     type: int
-
-
-
-
 
   disabled:
     description:
@@ -72,19 +62,11 @@ options:
         If a downtime has been disabled.
     type: bool
 
-
-
-
-
   downtime_type:
     description:
       - >-
         0 for a downtime applied on or all, 1 when the downtime is only scoped to hosts, or 2 when the...
     type: int
-
-
-
-
 
   end:
     description:
@@ -92,19 +74,11 @@ options:
         POSIX timestamp to end the downtime. If not provided, the downtime is in effect indefinitely...
     type: int
 
-
-
-
-
   id:
     description:
       - >-
         The downtime ID.
     type: int
-
-
-
-
 
   notification_message:
     description:
@@ -112,19 +86,11 @@ options:
         A message to include with notifications for this downtime. Email notifications can be sent to...
     type: str
 
-
-
-
-
   monitor_id:
     description:
       - >-
         A single monitor to which the downtime applies. If not provided, the downtime applies to all monitors.
     type: int
-
-
-
-
 
   monitor_tags:
     description:
@@ -133,19 +99,11 @@ options:
     type: list
     elements: str
 
-
-
-
-
   mute_first_recovery_notification:
     description:
       - >-
         If the first recovery notification during a downtime should be muted.
     type: bool
-
-
-
-
 
   notify_end_states:
     description:
@@ -154,11 +112,7 @@ options:
     type: list
     elements: str
 
-
-
     default: ["alert", "no data", "warn"]
-
-
 
   notify_end_types:
     description:
@@ -167,11 +121,7 @@ options:
     type: list
     elements: str
 
-
-
     default: ["expired"]
-
-
 
   parent_id:
     description:
@@ -179,19 +129,11 @@ options:
         ID of the parent Downtime.
     type: int
 
-
-
-
-
   recurrence:
     description:
       - >-
         An object defining the recurrence of the downtime.
     type: dict
-
-
-
-
 
   scope:
     description:
@@ -200,19 +142,11 @@ options:
     type: list
     elements: str
 
-
-
-
-
   start:
     description:
       - >-
         POSIX timestamp to start the downtime. If not provided, the downtime starts the moment it is created.
     type: int
-
-
-
-
 
   timezone:
     description:
@@ -220,19 +154,11 @@ options:
         The timezone in which to display the downtime's start and end times in Datadog applications.
     type: str
 
-
-
-
-
   updater_id:
     description:
       - >-
         ID of the last user that updated the downtime.
     type: int
-
-
-
-
 
 extends_documentation_fragment:
   - stevefulme1.datadog.auth
@@ -243,137 +169,53 @@ EXAMPLES = r"""
 - name: Create a downtime
   stevefulme1.datadog.downtime:
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     state: present
   # API: POST /api/v1/downtime
-
-
 
 - name: Update a downtime
   stevefulme1.datadog.downtime:
     id: "existing_id"
 
-
     active: "updated_active"
-
-
 
     active_child: "updated_active_child"
 
-
-
     canceled: "updated_canceled"
-
-
 
     creator_id: "updated_creator_id"
 
-
-
     disabled: "updated_disabled"
-
-
 
     downtime_type: "updated_downtime_type"
 
-
-
     end: "updated_end"
-
-
-
-
 
     message: "updated_message"
 
-
-
     monitor_id: "updated_monitor_id"
-
-
 
     monitor_tags: "updated_monitor_tags"
 
-
-
     mute_first_recovery_notification: "updated_mute_first_recovery_notification"
-
-
 
     notify_end_states: "updated_notify_end_states"
 
-
-
     notify_end_types: "updated_notify_end_types"
-
-
 
     parent_id: "updated_parent_id"
 
-
-
     recurrence: "updated_recurrence"
-
-
 
     scope: "updated_scope"
 
-
-
     start: "updated_start"
-
-
 
     timezone: "updated_timezone"
 
-
-
     updater_id: "updated_updater_id"
 
-
     state: present
-  # API:  
-
-
+  # API:
 
 - name: Delete a downtime
   stevefulme1.datadog.downtime:
@@ -391,13 +233,11 @@ active:
   returned: success
   type: bool
 
-
 active_child:
   description: >-
     The downtime object definition of the active child for the original parent recurring downtime....
   returned: success
   type: dict
-
 
 canceled:
   description: >-
@@ -405,13 +245,11 @@ canceled:
   returned: success
   type: int
 
-
 creator_id:
   description: >-
     User ID of the downtime creator.
   returned: success
   type: int
-
 
 disabled:
   description: >-
@@ -419,13 +257,11 @@ disabled:
   returned: success
   type: bool
 
-
 downtime_type:
   description: >-
     0 for a downtime applied on or all, 1 when the downtime is only scoped to hosts, or 2 when the...
   returned: success
   type: int
-
 
 end:
   description: >-
@@ -433,13 +269,11 @@ end:
   returned: success
   type: int
 
-
 id:
   description: >-
     The downtime ID.
   returned: success
   type: int
-
 
 notification_message:
   description: >-
@@ -447,13 +281,11 @@ notification_message:
   returned: success
   type: str
 
-
 monitor_id:
   description: >-
     A single monitor to which the downtime applies. If not provided, the downtime applies to all monitors.
   returned: success
   type: int
-
 
 monitor_tags:
   description: >-
@@ -461,13 +293,11 @@ monitor_tags:
   returned: success
   type: list
 
-
 mute_first_recovery_notification:
   description: >-
     If the first recovery notification during a downtime should be muted.
   returned: success
   type: bool
-
 
 notify_end_states:
   description: >-
@@ -475,13 +305,11 @@ notify_end_states:
   returned: success
   type: list
 
-
 notify_end_types:
   description: >-
     If set, notifies if a monitor is in an alert-worthy state (ALERT, WARNING, or NO DATA) when this...
   returned: success
   type: list
-
 
 parent_id:
   description: >-
@@ -489,13 +317,11 @@ parent_id:
   returned: success
   type: int
 
-
 recurrence:
   description: >-
     An object defining the recurrence of the downtime.
   returned: success
   type: dict
-
 
 scope:
   description: >-
@@ -503,13 +329,11 @@ scope:
   returned: success
   type: list
 
-
 start:
   description: >-
     POSIX timestamp to start the downtime. If not provided, the downtime starts the moment it is created.
   returned: success
   type: int
-
 
 timezone:
   description: >-
@@ -517,22 +341,13 @@ timezone:
   returned: success
   type: str
 
-
 updater_id:
   description: >-
     ID of the last user that updated the downtime.
   returned: success
   type: int
 
-
 """
-
-from ansible.module_utils.basic import AnsibleModule
-from ansible_collections.stevefulme1.datadog.plugins.module_utils.api_client import (
-    Client,
-    ClientError,
-    argument_spec as auth_argument_spec,
-)
 
 
 def get_current_state(client, module):
@@ -558,7 +373,6 @@ def get_current_state(client, module):
         return None
     except ClientError:
         return None
-
 
 
 def needs_update(current, desired):
@@ -650,184 +464,104 @@ def main():
             active=dict(
                 type="bool",
 
-
-
-
-
             ),
 
             active_child=dict(
                 type="dict",
-
-
-
-
 
             ),
 
             canceled=dict(
                 type="int",
 
-
-
-
-
             ),
 
             creator_id=dict(
                 type="int",
-
-
-
-
 
             ),
 
             disabled=dict(
                 type="bool",
 
-
-
-
-
             ),
 
             downtime_type=dict(
                 type="int",
-
-
-
-
 
             ),
 
             end=dict(
                 type="int",
 
-
-
-
-
             ),
 
             id=dict(
                 type="int",
-
-
-
-
 
             ),
 
             notification_message=dict(
                 type="str",
 
-
-
-
-
             ),
 
             monitor_id=dict(
                 type="int",
-
-
-
-
 
             ),
 
             monitor_tags=dict(
                 type="list", elements="str",
 
-
-
-
-
             ),
 
             mute_first_recovery_notification=dict(
                 type="bool",
-
-
-
-
 
             ),
 
             notify_end_states=dict(
                 type="list", elements="str",
 
-
-
                 default=["alert", "no data", "warn"],
-
-
 
             ),
 
             notify_end_types=dict(
                 type="list", elements="str",
 
-
-
                 default=["expired"],
-
-
 
             ),
 
             parent_id=dict(
                 type="int",
 
-
-
-
-
             ),
 
             recurrence=dict(
                 type="dict",
-
-
-
-
 
             ),
 
             scope=dict(
                 type="list", elements="str",
 
-
-
-
-
             ),
 
             start=dict(
                 type="int",
-
-
-
-
 
             ),
 
             timezone=dict(
                 type="str",
 
-
-
-
-
             ),
 
             updater_id=dict(
                 type="int",
-
-
-
-
 
             ),
 
@@ -864,7 +598,6 @@ def main():
                     )
                     result.update(response if isinstance(response, dict) else {})
 
-
             elif needs_update(current, desired):
                 # Resource exists but needs updating
                 result["changed"] = True
@@ -882,7 +615,6 @@ def main():
                         data=desired,
                     )
                     result.update(response if isinstance(response, dict) else {})
-
 
             else:
                 # Resource exists and is up-to-date
@@ -927,7 +659,6 @@ def main():
 
                 result["updater_id"] = current.get("updater_id")
 
-
         elif state == "absent":
             if current is not None:
                 result["changed"] = True
@@ -941,7 +672,6 @@ def main():
                         "{id}", str(identifier)
                     )
                     client.delete(path)
-
 
     except ClientError as e:
         module.fail_json(msg=str(e), **result)

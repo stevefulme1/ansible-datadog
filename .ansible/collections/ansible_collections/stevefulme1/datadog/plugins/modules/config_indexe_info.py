@@ -32,29 +32,6 @@ options:
     type: str
     required: false
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   page:
     description:
       - Page number for paginated results.
@@ -81,12 +58,10 @@ EXAMPLES = r"""
   stevefulme1.datadog.config_indexe_info:
   register: result
 
-
 - name: List config_indexe resources filtered by name
   stevefulme1.datadog.config_indexe_info:
     name: "my_config_indexe"
   register: result
-
 
 - name: List config_indexe resources with pagination
   stevefulme1.datadog.config_indexe_info:
@@ -108,60 +83,50 @@ config_indexes:
         The number of log events you can send in this index per day before you are rate-limited.
       type: int
 
-
     daily_limit_reset:
       description: >-
         Object containing options to override the default daily limit reset time.
       type: dict
-
 
     daily_limit_warning_threshold_percentage:
       description: >-
         A percentage threshold of the daily quota at which a Datadog warning event is generated.
       type: float
 
-
     exclusion_filters:
       description: >-
         An array of exclusion objects. The logs are tested against the query of each filter, following...
       type: list
-
 
     filter:
       description: >-
         Filter for logs.
       type: dict
 
-
     is_rate_limited:
       description: >-
         A boolean stating if the index is rate limited, meaning more logs than the daily limit have been...
       type: bool
-
 
     name:
       description: >-
         The name of the index.
       type: str
 
-
     num_flex_logs_retention_days:
       description: >-
         The total number of days logs are stored in Standard and Flex Tier before being deleted from the...
       type: int
-
 
     num_retention_days:
       description: >-
         The number of days logs are stored in Standard Tier before aging into the Flex Tier or being...
       type: int
 
-
     tags:
       description: >-
         A list of tags associated with the index. Tags must be in key:value format.
       type: list
-
 
 """
 
@@ -171,7 +136,6 @@ from ansible_collections.stevefulme1.datadog.plugins.module_utils.api_client imp
     ClientError,
     argument_spec as auth_argument_spec,
 )
-
 
 def fetch_single(client, identifier):
     """Retrieve a single config_indexe by identifier."""
@@ -185,42 +149,14 @@ def fetch_single(client, identifier):
             return item
     return None
 
-
-
 def fetch_list(client, module):
     """List config_indexe resources with optional filtering and pagination."""
 
     params = {}
 
-
     name_filter = module.params.get("name")
     if name_filter is not None:
         params["name"] = name_filter
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     page = module.params.get("page")
     page_size = module.params.get("page_size")
@@ -237,8 +173,6 @@ def fetch_list(client, module):
     else:
         return client.get_paginated("/api/v1/logs/config/indexes", params=params)
 
-
-
 def main():
     spec = auth_argument_spec()
     spec.update(
@@ -246,29 +180,6 @@ def main():
             id=dict(type="str", required=False),
 
             name=dict(type="str", required=False),
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
             page=dict(type="int", required=False),
             page_size=dict(type="int", required=False),
@@ -303,7 +214,6 @@ def main():
         module.fail_json(msg=str(e), **result)
 
     module.exit_json(**result)
-
 
 if __name__ == "__main__":
     main()

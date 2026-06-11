@@ -32,11 +32,7 @@ options:
         The access role of the user. Options are st (standard user), adm (admin user), or ro (read-only user).
     type: str
 
-
     choices: ["st", "adm", "ro", "ERROR"]
-
-
-
 
   disabled:
     description:
@@ -44,19 +40,11 @@ options:
         The new disabled status of the user.
     type: bool
 
-
-
-
-
   email:
     description:
       - >-
         The new email of the user.
     type: str
-
-
-
-
 
   handle:
     description:
@@ -64,19 +52,11 @@ options:
         The user handle, must be a valid email.
     type: str
 
-
-
-
-
   icon:
     description:
       - >-
         Gravatar icon associated to the user.
     type: str
-
-
-
-
 
   name:
     description:
@@ -84,19 +64,11 @@ options:
         The name of the user.
     type: str
 
-
-
-
-
   verified:
     description:
       - >-
         Whether or not the user logged in Datadog at least once.
     type: bool
-
-
-
-
 
 extends_documentation_fragment:
   - stevefulme1.datadog.auth
@@ -107,61 +79,29 @@ EXAMPLES = r"""
 - name: Create a user
   stevefulme1.datadog.user:
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     state: present
   # API: POST /api/v1/user
-
-
 
 - name: Update a user
   stevefulme1.datadog.user:
     id: "existing_id"
 
-
     access_role: "updated_access_role"
-
-
 
     disabled: "updated_disabled"
 
-
-
     email: "updated_email"
-
-
 
     handle: "updated_handle"
 
-
-
     icon: "updated_icon"
-
-
 
     name: "updated_name"
 
-
-
     verified: "updated_verified"
 
-
     state: present
-  # API:  
-
-
+  # API:
 
 - name: Delete a user
   stevefulme1.datadog.user:
@@ -179,7 +119,6 @@ user:
   returned: success
   type: dict
 
-
 """
 
 from ansible.module_utils.basic import AnsibleModule
@@ -188,7 +127,6 @@ from ansible_collections.stevefulme1.datadog.plugins.module_utils.api_client imp
     ClientError,
     argument_spec as auth_argument_spec,
 )
-
 
 def get_current_state(client, module):
     """Retrieve the current state of the user via GET."""
@@ -214,8 +152,6 @@ def get_current_state(client, module):
     except ClientError:
         return None
 
-
-
 def needs_update(current, desired):
     """Compare current state against desired params and return True if an update is needed."""
     if current is None:
@@ -227,7 +163,6 @@ def needs_update(current, desired):
         if current_value != value:
             return True
     return False
-
 
 def build_payload(module):
     """Build the API request payload from module params."""
@@ -256,7 +191,6 @@ def build_payload(module):
 
     return payload
 
-
 def main():
     spec = auth_argument_spec()
     spec.update(
@@ -266,65 +200,37 @@ def main():
             access_role=dict(
                 type="str",
 
-
                 choices=['st', 'adm', 'ro', 'ERROR'],
-
-
-
 
             ),
 
             disabled=dict(
                 type="bool",
 
-
-
-
-
             ),
 
             email=dict(
                 type="str",
-
-
-
-
 
             ),
 
             handle=dict(
                 type="str",
 
-
-
-
-
             ),
 
             icon=dict(
                 type="str",
-
-
-
-
 
             ),
 
             name=dict(
                 type="str",
 
-
-
-
-
             ),
 
             verified=dict(
                 type="bool",
-
-
-
-
 
             ),
 
@@ -361,7 +267,6 @@ def main():
                     )
                     result.update(response if isinstance(response, dict) else {})
 
-
             elif needs_update(current, desired):
                 # Resource exists but needs updating
                 result["changed"] = True
@@ -380,12 +285,10 @@ def main():
                     )
                     result.update(response if isinstance(response, dict) else {})
 
-
             else:
                 # Resource exists and is up-to-date
 
                 result["user"] = current.get("user")
-
 
         elif state == "absent":
             if current is not None:
@@ -401,12 +304,10 @@ def main():
                     )
                     client.delete(path)
 
-
     except ClientError as e:
         module.fail_json(msg=str(e), **result)
 
     module.exit_json(**result)
-
 
 if __name__ == "__main__":
     main()

@@ -5,6 +5,12 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
+from ansible_collections.stevefulme1.datadog.plugins.module_utils.api_client import (
+    Client,
+    ClientError,
+    argument_spec as auth_argument_spec,
+)
+from ansible.module_utils.basic import AnsibleModule
 
 __metaclass__ = type
 
@@ -25,47 +31,6 @@ options:
       - When omitted, all downtime resources are listed.
     type: str
     required: false
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   page:
     description:
@@ -93,8 +58,6 @@ EXAMPLES = r"""
   stevefulme1.datadog.downtime_info:
   register: result
 
-
-
 - name: List downtime resources with pagination
   stevefulme1.datadog.downtime_info:
     page: 1
@@ -115,129 +78,102 @@ downtimes:
         If a scheduled downtime currently exists.
       type: bool
 
-
     active_child:
       description: >-
         The downtime object definition of the active child for the original parent recurring downtime....
       type: dict
-
 
     canceled:
       description: >-
         If a scheduled downtime is canceled.
       type: int
 
-
     creator_id:
       description: >-
         User ID of the downtime creator.
       type: int
-
 
     disabled:
       description: >-
         If a downtime has been disabled.
       type: bool
 
-
     downtime_type:
       description: >-
         0 for a downtime applied on or all, 1 when the downtime is only scoped to hosts, or 2 when the...
       type: int
-
 
     end:
       description: >-
         POSIX timestamp to end the downtime. If not provided, the downtime is in effect indefinitely...
       type: int
 
-
     id:
       description: >-
         The downtime ID.
       type: int
-
 
     message:
       description: >-
         A message to include with notifications for this downtime. Email notifications can be sent to...
       type: str
 
-
     monitor_id:
       description: >-
         A single monitor to which the downtime applies. If not provided, the downtime applies to all monitors.
       type: int
-
 
     monitor_tags:
       description: >-
         A comma-separated list of monitor tags. For example, tags that are applied directly to monitors,...
       type: list
 
-
     mute_first_recovery_notification:
       description: >-
         If the first recovery notification during a downtime should be muted.
       type: bool
-
 
     notify_end_states:
       description: >-
         States for which notify_end_types sends out notifications for.
       type: list
 
-
     notify_end_types:
       description: >-
         If set, notifies if a monitor is in an alert-worthy state (ALERT, WARNING, or NO DATA) when this...
       type: list
-
 
     parent_id:
       description: >-
         ID of the parent Downtime.
       type: int
 
-
     recurrence:
       description: >-
         An object defining the recurrence of the downtime.
       type: dict
-
 
     scope:
       description: >-
         The scope(s) to which the downtime applies and must be in key:value format. For example,...
       type: list
 
-
     start:
       description: >-
         POSIX timestamp to start the downtime. If not provided, the downtime starts the moment it is created.
       type: int
-
 
     timezone:
       description: >-
         The timezone in which to display the downtime's start and end times in Datadog applications.
       type: str
 
-
     updater_id:
       description: >-
         ID of the last user that updated the downtime.
       type: int
 
-
 """
-
-from ansible.module_utils.basic import AnsibleModule
-from ansible_collections.stevefulme1.datadog.plugins.module_utils.api_client import (
-    Client,
-    ClientError,
-    argument_spec as auth_argument_spec,
-)
 
 
 def fetch_single(client, identifier):
@@ -253,55 +189,10 @@ def fetch_single(client, identifier):
     return None
 
 
-
 def fetch_list(client, module):
     """List downtime resources with optional filtering and pagination."""
 
     params = {}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     page = module.params.get("page")
     page_size = module.params.get("page_size")
@@ -319,53 +210,11 @@ def fetch_list(client, module):
         return client.get_paginated("/api/v1/downtime", params=params)
 
 
-
 def main():
     spec = auth_argument_spec()
     spec.update(
         dict(
             id=dict(type="str", required=False),
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
             page=dict(type="int", required=False),
             page_size=dict(type="int", required=False),

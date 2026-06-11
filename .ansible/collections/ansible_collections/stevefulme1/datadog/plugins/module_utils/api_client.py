@@ -15,7 +15,6 @@ from ansible.module_utils.urls import open_url
 from ansible.module_utils.six.moves.urllib.error import HTTPError, URLError
 from ansible.module_utils.six.moves.urllib.parse import urlencode
 
-
 class ClientError(Exception):
     """Exception raised by the API client."""
 
@@ -23,7 +22,6 @@ class ClientError(Exception):
         super(ClientError, self).__init__(message)
         self.status_code = status_code
         self.response_body = response_body
-
 
 def argument_spec():
     """Return the shared authentication argument spec for all modules."""
@@ -40,7 +38,6 @@ def argument_spec():
         validate_certs=dict(type="bool", default=True),
         request_timeout=dict(type="int", default=30),
     )
-
 
 class Client:
     """HTTP client for the datadog API with auth, retry, and pagination."""
@@ -63,11 +60,9 @@ class Client:
             "Accept": "application/json",
         }
 
-
         headers["DD-API-KEY"] = self.module.params["api_key"]
         if self.module.params.get("application_key"):
             headers["DD-APPLICATION-KEY"] = self.module.params["application_key"]
-
 
         return headers
 

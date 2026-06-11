@@ -5,6 +5,12 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
+from ansible_collections.stevefulme1.datadog.plugins.module_utils.api_client import (
+    Client,
+    ClientError,
+    argument_spec as auth_argument_spec,
+)
+from ansible.module_utils.basic import AnsibleModule
 
 __metaclass__ = type
 
@@ -32,11 +38,7 @@ options:
         The access role of the user. Options are st (standard user), adm (admin user), or ro (read-only user).
     type: str
 
-
     choices: ["st", "adm", "ro", "ERROR"]
-
-
-
 
   disabled:
     description:
@@ -44,19 +46,11 @@ options:
         The new disabled status of the user.
     type: bool
 
-
-
-
-
   email:
     description:
       - >-
         The new email of the user.
     type: str
-
-
-
-
 
   handle:
     description:
@@ -64,19 +58,11 @@ options:
         The user handle, must be a valid email.
     type: str
 
-
-
-
-
   icon:
     description:
       - >-
         Gravatar icon associated to the user.
     type: str
-
-
-
-
 
   name:
     description:
@@ -84,19 +70,11 @@ options:
         The name of the user.
     type: str
 
-
-
-
-
   verified:
     description:
       - >-
         Whether or not the user logged in Datadog at least once.
     type: bool
-
-
-
-
 
 extends_documentation_fragment:
   - stevefulme1.datadog.auth
@@ -107,61 +85,29 @@ EXAMPLES = r"""
 - name: Create a user
   stevefulme1.datadog.user:
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     state: present
   # API: POST /api/v1/user
-
-
 
 - name: Update a user
   stevefulme1.datadog.user:
     id: "existing_id"
 
-
     access_role: "updated_access_role"
-
-
 
     disabled: "updated_disabled"
 
-
-
     email: "updated_email"
-
-
 
     handle: "updated_handle"
 
-
-
     icon: "updated_icon"
-
-
 
     name: "updated_name"
 
-
-
     verified: "updated_verified"
 
-
     state: present
-  # API:  
-
-
+  # API:
 
 - name: Delete a user
   stevefulme1.datadog.user:
@@ -179,15 +125,7 @@ user:
   returned: success
   type: dict
 
-
 """
-
-from ansible.module_utils.basic import AnsibleModule
-from ansible_collections.stevefulme1.datadog.plugins.module_utils.api_client import (
-    Client,
-    ClientError,
-    argument_spec as auth_argument_spec,
-)
 
 
 def get_current_state(client, module):
@@ -213,7 +151,6 @@ def get_current_state(client, module):
         return None
     except ClientError:
         return None
-
 
 
 def needs_update(current, desired):
@@ -266,65 +203,37 @@ def main():
             access_role=dict(
                 type="str",
 
-
                 choices=['st', 'adm', 'ro', 'ERROR'],
-
-
-
 
             ),
 
             disabled=dict(
                 type="bool",
 
-
-
-
-
             ),
 
             email=dict(
                 type="str",
-
-
-
-
 
             ),
 
             handle=dict(
                 type="str",
 
-
-
-
-
             ),
 
             icon=dict(
                 type="str",
-
-
-
-
 
             ),
 
             name=dict(
                 type="str",
 
-
-
-
-
             ),
 
             verified=dict(
                 type="bool",
-
-
-
-
 
             ),
 
@@ -361,7 +270,6 @@ def main():
                     )
                     result.update(response if isinstance(response, dict) else {})
 
-
             elif needs_update(current, desired):
                 # Resource exists but needs updating
                 result["changed"] = True
@@ -380,12 +288,10 @@ def main():
                     )
                     result.update(response if isinstance(response, dict) else {})
 
-
             else:
                 # Resource exists and is up-to-date
 
                 result["user"] = current.get("user")
-
 
         elif state == "absent":
             if current is not None:
@@ -400,7 +306,6 @@ def main():
                         "{id}", str(identifier)
                     )
                     client.delete(path)
-
 
     except ClientError as e:
         module.fail_json(msg=str(e), **result)

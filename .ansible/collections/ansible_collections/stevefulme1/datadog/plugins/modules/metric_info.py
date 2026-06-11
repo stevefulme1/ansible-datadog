@@ -26,21 +26,6 @@ options:
     type: str
     required: false
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   page:
     description:
       - Page number for paginated results.
@@ -67,8 +52,6 @@ EXAMPLES = r"""
   stevefulme1.datadog.metric_info:
   register: result
 
-
-
 - name: List metric resources with pagination
   stevefulme1.datadog.metric_info:
     page: 1
@@ -89,42 +72,35 @@ metrics:
         Metric description.
       type: str
 
-
     integration:
       description: >-
         Name of the integration that sent the metric if applicable.
       type: str
-
 
     per_unit:
       description: >-
         Per unit of the metric such as second in bytes per second.
       type: str
 
-
     short_name:
       description: >-
         A more human-readable and abbreviated version of the metric name.
       type: str
-
 
     statsd_interval:
       description: >-
         StatsD flush interval of the metric in seconds if applicable.
       type: int
 
-
     type:
       description: >-
         Metric type such as gauge or rate.
       type: str
 
-
     unit:
       description: >-
         Primary unit of the metric such as byte or operation.
       type: str
-
 
 """
 
@@ -134,7 +110,6 @@ from ansible_collections.stevefulme1.datadog.plugins.module_utils.api_client imp
     ClientError,
     argument_spec as auth_argument_spec,
 )
-
 
 def fetch_single(client, identifier):
     """Retrieve a single metric by identifier."""
@@ -148,30 +123,10 @@ def fetch_single(client, identifier):
             return item
     return None
 
-
-
 def fetch_list(client, module):
     """List metric resources with optional filtering and pagination."""
 
     params = {}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     page = module.params.get("page")
     page_size = module.params.get("page_size")
@@ -188,28 +143,11 @@ def fetch_list(client, module):
     else:
         return client.get_paginated("/api/v1/metrics", params=params)
 
-
-
 def main():
     spec = auth_argument_spec()
     spec.update(
         dict(
             id=dict(type="str", required=False),
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
             page=dict(type="int", required=False),
             page_size=dict(type="int", required=False),
@@ -244,7 +182,6 @@ def main():
         module.fail_json(msg=str(e), **result)
 
     module.exit_json(**result)
-
 
 if __name__ == "__main__":
     main()

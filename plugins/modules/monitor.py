@@ -5,6 +5,12 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
+from ansible_collections.stevefulme1.datadog.plugins.module_utils.api_client import (
+    Client,
+    ClientError,
+    argument_spec as auth_argument_spec,
+)
+from ansible.module_utils.basic import AnsibleModule
 
 __metaclass__ = type
 
@@ -33,19 +39,11 @@ options:
     type: list
     elements: str
 
-
-
-
-
   created:
     description:
       - >-
         Timestamp of the monitor creation.
     type: str
-
-
-
-
 
   creator:
     description:
@@ -53,19 +51,11 @@ options:
         Object describing the creator of the shared element.
     type: dict
 
-
-
-
-
   deleted:
     description:
       - >-
         Whether or not the monitor is deleted. (Always null)
     type: str
-
-
-
-
 
   draft_status:
     description:
@@ -73,23 +63,15 @@ options:
         Indicates whether the monitor is in a draft or published state. draft: The monitor appears as...
     type: str
 
-
     choices: ["draft", "published"]
 
-
     default: "published"
-
-
 
   id:
     description:
       - >-
         ID of this monitor.
     type: int
-
-
-
-
 
   matching_downtimes:
     description:
@@ -98,19 +80,11 @@ options:
     type: list
     elements: str
 
-
-
-
-
   notification_message:
     description:
       - >-
         A message to include with notifications for this monitor.
     type: str
-
-
-
-
 
   modified:
     description:
@@ -118,19 +92,11 @@ options:
         Last timestamp when the monitor was edited.
     type: str
 
-
-
-
-
   multi:
     description:
       - >-
         Whether or not the monitor is broken down on different groups.
     type: bool
-
-
-
-
 
   name:
     description:
@@ -138,19 +104,11 @@ options:
         The monitor name.
     type: str
 
-
-
-
-
   options:
     description:
       - >-
         List of options associated with your monitor.
     type: dict
-
-
-
-
 
   overall_state:
     description:
@@ -158,11 +116,7 @@ options:
         The different states your monitor can be in.
     type: str
 
-
     choices: ["Alert", "Ignored", "No Data", "OK", "Skipped", "Unknown", "Warn"]
-
-
-
 
   priority:
     description:
@@ -170,19 +124,11 @@ options:
         Integer from 1 (high) to 5 (low) indicating alert severity.
     type: int
 
-
-
-
-
   query:
     description:
       - >-
         The monitor query.
     type: str
-
-
-
-
 
   restricted_roles:
     description:
@@ -191,10 +137,6 @@ options:
     type: list
     elements: str
 
-
-
-
-
   tags:
     description:
       - >-
@@ -202,21 +144,19 @@ options:
     type: list
     elements: str
 
-
-
-
-
   type:
     description:
       - >-
         The type of the monitor. For more information about type, see the monitor options docs.
     type: str
 
-
-    choices: ["composite", "event alert", "log alert", "metric alert", "process alert", "query alert", "rum alert", "service check", "synthetics alert", "trace-analytics alert", "slo alert", "event-v2 alert", "audit alert", "ci-pipelines alert", "ci-tests alert", "error-tracking alert", "database-monitoring alert", "network-performance alert", "cost alert", "data-quality alert", "network-path alert", "data-jobs alert"]
-
-
-
+    choices: [
+        "composite", "event alert", "log alert", "metric alert", "process alert", "query alert",
+        "rum alert", "service check", "synthetics alert", "trace-analytics alert", "slo alert",
+        "event-v2 alert", "audit alert", "ci-pipelines alert", "ci-tests alert", "error-tracking alert",
+        "database-monitoring alert", "network-performance alert", "cost alert", "data-quality alert",
+        "network-path alert", "data-jobs alert"
+    ]
 
 extends_documentation_fragment:
   - stevefulme1.datadog.auth
@@ -227,129 +167,49 @@ EXAMPLES = r"""
 - name: Create a monitor
   stevefulme1.datadog.monitor:
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     state: present
   # API: POST /api/v1/monitor
-
-
 
 - name: Update a monitor
   stevefulme1.datadog.monitor:
     id: "existing_id"
 
-
     assets: "updated_assets"
-
-
 
     created: "updated_created"
 
-
-
     creator: "updated_creator"
-
-
 
     deleted: "updated_deleted"
 
-
-
     draft_status: "updated_draft_status"
-
-
-
-
 
     matching_downtimes: "updated_matching_downtimes"
 
-
-
     message: "updated_message"
-
-
 
     modified: "updated_modified"
 
-
-
     multi: "updated_multi"
-
-
 
     name: "updated_name"
 
-
-
     options: "updated_options"
-
-
 
     overall_state: "updated_overall_state"
 
-
-
     priority: "updated_priority"
-
-
 
     query: "updated_query"
 
-
-
     restricted_roles: "updated_restricted_roles"
-
-
-
-
 
     tags: "updated_tags"
 
-
-
     type: "updated_type"
 
-
     state: present
-  # API:  
-
-
+  # API:
 
 - name: Delete a monitor
   stevefulme1.datadog.monitor:
@@ -367,13 +227,11 @@ assets:
   returned: success
   type: list
 
-
 created:
   description: >-
     Timestamp of the monitor creation.
   returned: success
   type: str
-
 
 creator:
   description: >-
@@ -381,13 +239,11 @@ creator:
   returned: success
   type: dict
 
-
 deleted:
   description: >-
     Whether or not the monitor is deleted. (Always null)
   returned: success
   type: str
-
 
 draft_status:
   description: >-
@@ -395,13 +251,11 @@ draft_status:
   returned: success
   type: str
 
-
 id:
   description: >-
     ID of this monitor.
   returned: success
   type: int
-
 
 matching_downtimes:
   description: >-
@@ -409,13 +263,11 @@ matching_downtimes:
   returned: success
   type: list
 
-
 notification_message:
   description: >-
     A message to include with notifications for this monitor.
   returned: success
   type: str
-
 
 modified:
   description: >-
@@ -423,13 +275,11 @@ modified:
   returned: success
   type: str
 
-
 multi:
   description: >-
     Whether or not the monitor is broken down on different groups.
   returned: success
   type: bool
-
 
 name:
   description: >-
@@ -437,13 +287,11 @@ name:
   returned: success
   type: str
 
-
 options:
   description: >-
     List of options associated with your monitor.
   returned: success
   type: dict
-
 
 overall_state:
   description: >-
@@ -451,13 +299,11 @@ overall_state:
   returned: success
   type: str
 
-
 priority:
   description: >-
     Integer from 1 (high) to 5 (low) indicating alert severity.
   returned: success
   type: int
-
 
 query:
   description: >-
@@ -465,13 +311,11 @@ query:
   returned: success
   type: str
 
-
 restricted_roles:
   description: >-
     A list of unique role identifiers to define which roles are allowed to edit the monitor. The...
   returned: success
   type: list
-
 
 state:
   description: >-
@@ -479,13 +323,11 @@ state:
   returned: success
   type: dict
 
-
 tags:
   description: >-
     Tags associated to your monitor.
   returned: success
   type: list
-
 
 type:
   description: >-
@@ -493,15 +335,7 @@ type:
   returned: success
   type: str
 
-
 """
-
-from ansible.module_utils.basic import AnsibleModule
-from ansible_collections.stevefulme1.datadog.plugins.module_utils.api_client import (
-    Client,
-    ClientError,
-    argument_spec as auth_argument_spec,
-)
 
 
 def get_current_state(client, module):
@@ -528,7 +362,6 @@ def get_current_state(client, module):
         return None
     except ClientError:
         return None
-
 
 
 def needs_update(current, desired):
@@ -617,170 +450,104 @@ def main():
             assets=dict(
                 type="list", elements="str",
 
-
-
-
-
             ),
 
             created=dict(
                 type="str",
-
-
-
-
 
             ),
 
             creator=dict(
                 type="dict",
 
-
-
-
-
             ),
 
             deleted=dict(
                 type="str",
-
-
-
-
 
             ),
 
             draft_status=dict(
                 type="str",
 
-
                 choices=['draft', 'published'],
 
-
                 default="published",
-
-
 
             ),
 
             id=dict(
                 type="int",
 
-
-
-
-
             ),
 
             matching_downtimes=dict(
                 type="list", elements="str",
-
-
-
-
 
             ),
 
             notification_message=dict(
                 type="str",
 
-
-
-
-
             ),
 
             modified=dict(
                 type="str",
-
-
-
-
 
             ),
 
             multi=dict(
                 type="bool",
 
-
-
-
-
             ),
 
             name=dict(
                 type="str",
-
-
-
-
 
             ),
 
             options=dict(
                 type="dict",
 
-
-
-
-
             ),
 
             overall_state=dict(
                 type="str",
 
-
                 choices=['Alert', 'Ignored', 'No Data', 'OK', 'Skipped', 'Unknown', 'Warn'],
-
-
-
 
             ),
 
             priority=dict(
                 type="int",
 
-
-
-
-
             ),
 
             query=dict(
                 type="str",
-
-
-
-
 
             ),
 
             restricted_roles=dict(
                 type="list", elements="str",
 
-
-
-
-
             ),
 
             tags=dict(
                 type="list", elements="str",
-
-
-
-
 
             ),
 
             type=dict(
                 type="str",
 
-
-                choices=['composite', 'event alert', 'log alert', 'metric alert', 'process alert', 'query alert', 'rum alert', 'service check', 'synthetics alert', 'trace-analytics alert', 'slo alert', 'event-v2 alert', 'audit alert', 'ci-pipelines alert', 'ci-tests alert', 'error-tracking alert', 'database-monitoring alert', 'network-performance alert', 'cost alert', 'data-quality alert', 'network-path alert', 'data-jobs alert'],
-
-
-
+                choices=[
+                    'composite', 'event alert', 'log alert', 'metric alert', 'process alert', 'query alert',
+                    'rum alert', 'service check', 'synthetics alert', 'trace-analytics alert', 'slo alert', 'event-v2 alert',
+                    'audit alert', 'ci-pipelines alert', 'ci-tests alert', 'error-tracking alert',
+                    'database-monitoring alert', 'network-performance alert', 'cost alert', 'data-quality alert',
+                    'network-path alert', 'data-jobs alert'
+                ],
 
             ),
 
@@ -817,7 +584,6 @@ def main():
                     )
                     result.update(response if isinstance(response, dict) else {})
 
-
             elif needs_update(current, desired):
                 # Resource exists but needs updating
                 result["changed"] = True
@@ -835,7 +601,6 @@ def main():
                         data=desired,
                     )
                     result.update(response if isinstance(response, dict) else {})
-
 
             else:
                 # Resource exists and is up-to-date
@@ -878,7 +643,6 @@ def main():
 
                 result["type"] = current.get("type")
 
-
         elif state == "absent":
             if current is not None:
                 result["changed"] = True
@@ -892,7 +656,6 @@ def main():
                         "{id}", str(identifier)
                     )
                     client.delete(path)
-
 
     except ClientError as e:
         module.fail_json(msg=str(e), **result)

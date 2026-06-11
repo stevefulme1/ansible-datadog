@@ -34,10 +34,6 @@ options:
 
     required: true
 
-
-
-
-
   name:
     description:
       - >-
@@ -45,10 +41,6 @@ options:
     type: str
 
     required: true
-
-
-
-
 
   tags:
     description:
@@ -59,19 +51,11 @@ options:
 
     required: true
 
-
-
-
-
   attributes:
     description:
       - >-
         Attributes of the global variable.
     type: dict
-
-
-
-
 
   id:
     description:
@@ -79,19 +63,11 @@ options:
         Unique identifier of the global variable.
     type: str
 
-
-
-
-
   is_fido:
     description:
       - >-
         Determines if the global variable is a FIDO variable.
     type: bool
-
-
-
-
 
   is_totp:
     description:
@@ -99,19 +75,11 @@ options:
         Determines if the global variable is a TOTP/MFA variable.
     type: bool
 
-
-
-
-
   parse_test_options:
     description:
       - >-
         Parser options to use for retrieving a Synthetic global variable from a Synthetic test. Used in...
     type: dict
-
-
-
-
 
   parse_test_public_id:
     description:
@@ -119,19 +87,11 @@ options:
         A Synthetic test ID to use as a test to generate the variable value.
     type: str
 
-
-
-
-
   value:
     description:
       - >-
         Value of the global variable.
     type: dict
-
-
-
-
 
 extends_documentation_fragment:
   - stevefulme1.datadog.auth
@@ -142,77 +102,33 @@ EXAMPLES = r"""
 - name: Create a synthetic_variable
   stevefulme1.datadog.synthetic_variable:
 
-
     description: "example_description"
-
-
 
     name: "example_name"
 
-
-
     tags: "example_tags"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     state: present
   # API: POST /api/v1/synthetics/variables
-
-
 
 - name: Update a synthetic_variable
   stevefulme1.datadog.synthetic_variable:
     id: "existing_id"
 
-
-
-
-
-
-
-
     attributes: "updated_attributes"
-
-
-
-
 
     is_fido: "updated_is_fido"
 
-
-
     is_totp: "updated_is_totp"
-
-
 
     parse_test_options: "updated_parse_test_options"
 
-
-
     parse_test_public_id: "updated_parse_test_public_id"
-
-
 
     value: "updated_value"
 
-
     state: present
-  # API:  
-
-
+  # API:
 
 - name: Delete a synthetic_variable
   stevefulme1.datadog.synthetic_variable:
@@ -230,13 +146,11 @@ attributes:
   returned: success
   type: dict
 
-
 description:
   description: >-
     Description of the global variable.
   returned: success
   type: str
-
 
 id:
   description: >-
@@ -244,13 +158,11 @@ id:
   returned: success
   type: str
 
-
 is_fido:
   description: >-
     Determines if the global variable is a FIDO variable.
   returned: success
   type: bool
-
 
 is_totp:
   description: >-
@@ -258,13 +170,11 @@ is_totp:
   returned: success
   type: bool
 
-
 name:
   description: >-
     Name of the global variable. Unique across Synthetic global variables.
   returned: success
   type: str
-
 
 parse_test_options:
   description: >-
@@ -272,13 +182,11 @@ parse_test_options:
   returned: success
   type: dict
 
-
 parse_test_public_id:
   description: >-
     A Synthetic test ID to use as a test to generate the variable value.
   returned: success
   type: str
-
 
 tags:
   description: >-
@@ -286,13 +194,11 @@ tags:
   returned: success
   type: list
 
-
 value:
   description: >-
     Value of the global variable.
   returned: success
   type: dict
-
 
 """
 
@@ -302,7 +208,6 @@ from ansible_collections.stevefulme1.datadog.plugins.module_utils.api_client imp
     ClientError,
     argument_spec as auth_argument_spec,
 )
-
 
 def get_current_state(client, module):
     """Retrieve the current state of the synthetic_variable via GET."""
@@ -329,8 +234,6 @@ def get_current_state(client, module):
     except ClientError:
         return None
 
-
-
 def needs_update(current, desired):
     """Compare current state against desired params and return True if an update is needed."""
     if current is None:
@@ -342,7 +245,6 @@ def needs_update(current, desired):
         if current_value != value:
             return True
     return False
-
 
 def build_payload(module):
     """Build the API request payload from module params."""
@@ -380,7 +282,6 @@ def build_payload(module):
 
     return payload
 
-
 def main():
     spec = auth_argument_spec()
     spec.update(
@@ -392,20 +293,12 @@ def main():
 
                 required=True,
 
-
-
-
-
             ),
 
             name=dict(
                 type="str",
 
                 required=True,
-
-
-
-
 
             ),
 
@@ -414,72 +307,40 @@ def main():
 
                 required=True,
 
-
-
-
-
             ),
 
             attributes=dict(
                 type="dict",
-
-
-
-
 
             ),
 
             id=dict(
                 type="str",
 
-
-
-
-
             ),
 
             is_fido=dict(
                 type="bool",
-
-
-
-
 
             ),
 
             is_totp=dict(
                 type="bool",
 
-
-
-
-
             ),
 
             parse_test_options=dict(
                 type="dict",
-
-
-
-
 
             ),
 
             parse_test_public_id=dict(
                 type="str",
 
-
-
-
-
             ),
 
             value=dict(
                 type="dict",
-
-
-
-
 
             ),
 
@@ -516,7 +377,6 @@ def main():
                     )
                     result.update(response if isinstance(response, dict) else {})
 
-
             elif needs_update(current, desired):
                 # Resource exists but needs updating
                 result["changed"] = True
@@ -534,7 +394,6 @@ def main():
                         data=desired,
                     )
                     result.update(response if isinstance(response, dict) else {})
-
 
             else:
                 # Resource exists and is up-to-date
@@ -559,7 +418,6 @@ def main():
 
                 result["value"] = current.get("value")
 
-
         elif state == "absent":
             if current is not None:
                 result["changed"] = True
@@ -574,12 +432,10 @@ def main():
                     )
                     client.delete(path)
 
-
     except ClientError as e:
         module.fail_json(msg=str(e), **result)
 
     module.exit_json(**result)
-
 
 if __name__ == "__main__":
     main()

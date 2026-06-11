@@ -34,10 +34,6 @@ options:
 
     required: true
 
-
-
-
-
   name:
     description:
       - >-
@@ -46,19 +42,11 @@ options:
 
     required: true
 
-
-
-
-
   daily_limit:
     description:
       - >-
         The number of log events you can send in this index per day before you are rate-limited.
     type: int
-
-
-
-
 
   daily_limit_reset:
     description:
@@ -66,29 +54,17 @@ options:
         Object containing options to override the default daily limit reset time.
     type: dict
 
-
-
-
-
   daily_limit_warning_threshold_percentage:
     description:
       - >-
         A percentage threshold of the daily quota at which a Datadog warning event is generated.
     type: float
 
-
-
-
-
   disable_daily_limit:
     description:
       - >-
         If true, sets the daily_limit value to null and the index is not limited on a daily basis (any...
     type: bool
-
-
-
-
 
   exclusion_filters:
     description:
@@ -97,19 +73,11 @@ options:
     type: list
     elements: str
 
-
-
-
-
   is_rate_limited:
     description:
       - >-
         A boolean stating if the index is rate limited, meaning more logs than the daily limit have been...
     type: bool
-
-
-
-
 
   num_flex_logs_retention_days:
     description:
@@ -117,19 +85,11 @@ options:
         The total number of days logs are stored in Standard and Flex Tier before being deleted from the...
     type: int
 
-
-
-
-
   num_retention_days:
     description:
       - >-
         The number of days logs are stored in Standard Tier before aging into the Flex Tier or being...
     type: int
-
-
-
-
 
   tags:
     description:
@@ -137,10 +97,6 @@ options:
         A list of tags associated with the index. Tags must be in key:value format.
     type: list
     elements: str
-
-
-
-
 
 extends_documentation_fragment:
   - stevefulme1.datadog.auth
@@ -151,85 +107,37 @@ EXAMPLES = r"""
 - name: Create a config_indexe
   stevefulme1.datadog.config_indexe:
 
-
     filter: "example_filter"
-
-
 
     name: "example_name"
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     state: present
   # API: POST /api/v1/logs/config/indexes
-
-
 
 - name: Update a config_indexe
   stevefulme1.datadog.config_indexe:
     id: "existing_id"
 
-
-
-
-
-
     daily_limit: "updated_daily_limit"
-
-
 
     daily_limit_reset: "updated_daily_limit_reset"
 
-
-
     daily_limit_warning_threshold_percentage: "updated_daily_limit_warning_threshold_percentage"
-
-
 
     disable_daily_limit: "updated_disable_daily_limit"
 
-
-
     exclusion_filters: "updated_exclusion_filters"
-
-
 
     is_rate_limited: "updated_is_rate_limited"
 
-
-
     num_flex_logs_retention_days: "updated_num_flex_logs_retention_days"
-
-
 
     num_retention_days: "updated_num_retention_days"
 
-
-
     tags: "updated_tags"
 
-
     state: present
-  # API:  
-
-
+  # API:
 
 - name: Delete a config_indexe
   stevefulme1.datadog.config_indexe:
@@ -247,13 +155,11 @@ daily_limit:
   returned: success
   type: int
 
-
 daily_limit_reset:
   description: >-
     Object containing options to override the default daily limit reset time.
   returned: success
   type: dict
-
 
 daily_limit_warning_threshold_percentage:
   description: >-
@@ -261,13 +167,11 @@ daily_limit_warning_threshold_percentage:
   returned: success
   type: float
 
-
 exclusion_filters:
   description: >-
     An array of exclusion objects. The logs are tested against the query of each filter, following...
   returned: success
   type: list
-
 
 filter:
   description: >-
@@ -275,13 +179,11 @@ filter:
   returned: success
   type: dict
 
-
 is_rate_limited:
   description: >-
     A boolean stating if the index is rate limited, meaning more logs than the daily limit have been...
   returned: success
   type: bool
-
 
 name:
   description: >-
@@ -289,13 +191,11 @@ name:
   returned: success
   type: str
 
-
 num_flex_logs_retention_days:
   description: >-
     The total number of days logs are stored in Standard and Flex Tier before being deleted from the...
   returned: success
   type: int
-
 
 num_retention_days:
   description: >-
@@ -303,13 +203,11 @@ num_retention_days:
   returned: success
   type: int
 
-
 tags:
   description: >-
     A list of tags associated with the index. Tags must be in key:value format.
   returned: success
   type: list
-
 
 """
 
@@ -319,7 +217,6 @@ from ansible_collections.stevefulme1.datadog.plugins.module_utils.api_client imp
     ClientError,
     argument_spec as auth_argument_spec,
 )
-
 
 def get_current_state(client, module):
     """Retrieve the current state of the config_indexe via GET."""
@@ -346,8 +243,6 @@ def get_current_state(client, module):
     except ClientError:
         return None
 
-
-
 def needs_update(current, desired):
     """Compare current state against desired params and return True if an update is needed."""
     if current is None:
@@ -359,7 +254,6 @@ def needs_update(current, desired):
         if current_value != value:
             return True
     return False
-
 
 def build_payload(module):
     """Build the API request payload from module params."""
@@ -400,7 +294,6 @@ def build_payload(module):
 
     return payload
 
-
 def main():
     spec = auth_argument_spec()
     spec.update(
@@ -412,10 +305,6 @@ def main():
 
                 required=True,
 
-
-
-
-
             ),
 
             name=dict(
@@ -423,90 +312,50 @@ def main():
 
                 required=True,
 
-
-
-
-
             ),
 
             daily_limit=dict(
                 type="int",
-
-
-
-
 
             ),
 
             daily_limit_reset=dict(
                 type="dict",
 
-
-
-
-
             ),
 
             daily_limit_warning_threshold_percentage=dict(
                 type="float",
-
-
-
-
 
             ),
 
             disable_daily_limit=dict(
                 type="bool",
 
-
-
-
-
             ),
 
             exclusion_filters=dict(
                 type="list", elements="str",
-
-
-
-
 
             ),
 
             is_rate_limited=dict(
                 type="bool",
 
-
-
-
-
             ),
 
             num_flex_logs_retention_days=dict(
                 type="int",
-
-
-
-
 
             ),
 
             num_retention_days=dict(
                 type="int",
 
-
-
-
-
             ),
 
             tags=dict(
                 type="list", elements="str",
-
-
-
-
 
             ),
 
@@ -543,7 +392,6 @@ def main():
                     )
                     result.update(response if isinstance(response, dict) else {})
 
-
             elif needs_update(current, desired):
                 # Resource exists but needs updating
                 result["changed"] = True
@@ -561,7 +409,6 @@ def main():
                         data=desired,
                     )
                     result.update(response if isinstance(response, dict) else {})
-
 
             else:
                 # Resource exists and is up-to-date
@@ -586,7 +433,6 @@ def main():
 
                 result["tags"] = current.get("tags")
 
-
         elif state == "absent":
             if current is not None:
                 result["changed"] = True
@@ -601,12 +447,10 @@ def main():
                     )
                     client.delete(path)
 
-
     except ClientError as e:
         module.fail_json(msg=str(e), **result)
 
     module.exit_json(**result)
-
 
 if __name__ == "__main__":
     main()

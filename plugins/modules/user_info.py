@@ -5,6 +5,12 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
+from ansible_collections.stevefulme1.datadog.plugins.module_utils.api_client import (
+    Client,
+    ClientError,
+    argument_spec as auth_argument_spec,
+)
+from ansible.module_utils.basic import AnsibleModule
 
 __metaclass__ = type
 
@@ -25,21 +31,6 @@ options:
       - When omitted, all user resources are listed.
     type: str
     required: false
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   page:
     description:
@@ -67,8 +58,6 @@ EXAMPLES = r"""
   stevefulme1.datadog.user_info:
   register: result
 
-
-
 - name: List user resources with pagination
   stevefulme1.datadog.user_info:
     page: 1
@@ -89,15 +78,7 @@ users:
         Create, edit, and disable users.
       type: dict
 
-
 """
-
-from ansible.module_utils.basic import AnsibleModule
-from ansible_collections.stevefulme1.datadog.plugins.module_utils.api_client import (
-    Client,
-    ClientError,
-    argument_spec as auth_argument_spec,
-)
 
 
 def fetch_single(client, identifier):
@@ -113,29 +94,10 @@ def fetch_single(client, identifier):
     return None
 
 
-
 def fetch_list(client, module):
     """List user resources with optional filtering and pagination."""
 
     params = {}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     page = module.params.get("page")
     page_size = module.params.get("page_size")
@@ -153,27 +115,11 @@ def fetch_list(client, module):
         return client.get_paginated("/api/v1/user", params=params)
 
 
-
 def main():
     spec = auth_argument_spec()
     spec.update(
         dict(
             id=dict(type="str", required=False),
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
             page=dict(type="int", required=False),
             page_size=dict(type="int", required=False),

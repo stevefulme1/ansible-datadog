@@ -32,45 +32,6 @@ options:
     type: str
     required: false
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   page:
     description:
       - Page number for paginated results.
@@ -97,12 +58,10 @@ EXAMPLES = r"""
   stevefulme1.datadog.monitor_info:
   register: result
 
-
 - name: List monitor resources filtered by name
   stevefulme1.datadog.monitor_info:
     name: "my_monitor"
   register: result
-
 
 - name: List monitor resources with pagination
   stevefulme1.datadog.monitor_info:
@@ -124,114 +83,95 @@ monitors:
         The list of monitor assets tied to a monitor, which represents key links for users to take...
       type: list
 
-
     created:
       description: >-
         Timestamp of the monitor creation.
       type: str
-
 
     creator:
       description: >-
         Object describing the creator of the shared element.
       type: dict
 
-
     deleted:
       description: >-
         Whether or not the monitor is deleted. (Always null)
       type: str
-
 
     draft_status:
       description: >-
         Indicates whether the monitor is in a draft or published state. draft: The monitor appears as...
       type: str
 
-
     id:
       description: >-
         ID of this monitor.
       type: int
-
 
     matching_downtimes:
       description: >-
         A list of active v1 downtimes that match this monitor.
       type: list
 
-
     message:
       description: >-
         A message to include with notifications for this monitor.
       type: str
-
 
     modified:
       description: >-
         Last timestamp when the monitor was edited.
       type: str
 
-
     multi:
       description: >-
         Whether or not the monitor is broken down on different groups.
       type: bool
-
 
     name:
       description: >-
         The monitor name.
       type: str
 
-
     options:
       description: >-
         List of options associated with your monitor.
       type: dict
-
 
     overall_state:
       description: >-
         The different states your monitor can be in.
       type: str
 
-
     priority:
       description: >-
         Integer from 1 (high) to 5 (low) indicating alert severity.
       type: int
-
 
     query:
       description: >-
         The monitor query.
       type: str
 
-
     restricted_roles:
       description: >-
         A list of unique role identifiers to define which roles are allowed to edit the monitor. The...
       type: list
-
 
     state:
       description: >-
         Wrapper object with the different monitor states.
       type: dict
 
-
     tags:
       description: >-
         Tags associated to your monitor.
       type: list
 
-
     type:
       description: >-
         The type of the monitor. For more information about type, see the monitor options docs.
       type: str
-
 
 """
 
@@ -241,7 +181,6 @@ from ansible_collections.stevefulme1.datadog.plugins.module_utils.api_client imp
     ClientError,
     argument_spec as auth_argument_spec,
 )
-
 
 def fetch_single(client, identifier):
     """Retrieve a single monitor by identifier."""
@@ -255,58 +194,14 @@ def fetch_single(client, identifier):
             return item
     return None
 
-
-
 def fetch_list(client, module):
     """List monitor resources with optional filtering and pagination."""
 
     params = {}
 
-
     name_filter = module.params.get("name")
     if name_filter is not None:
         params["name"] = name_filter
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     page = module.params.get("page")
     page_size = module.params.get("page_size")
@@ -323,8 +218,6 @@ def fetch_list(client, module):
     else:
         return client.get_paginated("/api/v1/monitor", params=params)
 
-
-
 def main():
     spec = auth_argument_spec()
     spec.update(
@@ -332,45 +225,6 @@ def main():
             id=dict(type="str", required=False),
 
             name=dict(type="str", required=False),
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
             page=dict(type="int", required=False),
             page_size=dict(type="int", required=False),
@@ -405,7 +259,6 @@ def main():
         module.fail_json(msg=str(e), **result)
 
     module.exit_json(**result)
-
 
 if __name__ == "__main__":
     main()

@@ -32,41 +32,6 @@ options:
     type: str
     required: false
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   page:
     description:
       - Page number for paginated results.
@@ -93,12 +58,10 @@ EXAMPLES = r"""
   stevefulme1.datadog.slo_info:
   register: result
 
-
 - name: List slo resources filtered by name
   stevefulme1.datadog.slo_info:
     name: "my_slo"
   register: result
-
 
 - name: List slo resources with pagination
   stevefulme1.datadog.slo_info:
@@ -120,108 +83,90 @@ slos:
         A list of SLO monitors IDs that reference this SLO. This field is returned only when...
       type: list
 
-
     created_at:
       description: >-
         Creation timestamp (UNIX time in seconds) Always included in service level objective responses.
       type: int
-
 
     creator:
       description: >-
         Object describing the creator of the shared element.
       type: dict
 
-
     description:
       description: >-
         A user-defined description of the service level objective. Always included in service level...
       type: str
-
 
     groups:
       description: >-
         A list of (up to 20) monitor groups that narrow the scope of a monitor service level objective....
       type: list
 
-
     id:
       description: >-
         A unique identifier for the service level objective object. Always included in service level...
       type: str
-
 
     modified_at:
       description: >-
         Modification timestamp (UNIX time in seconds) Always included in service level objective responses.
       type: int
 
-
     monitor_ids:
       description: >-
         A list of monitor ids that defines the scope of a monitor service level objective. Required if...
       type: list
-
 
     monitor_tags:
       description: >-
         The union of monitor tags for all monitors referenced by the monitor_ids field. Always included...
       type: list
 
-
     name:
       description: >-
         The name of the service level objective object.
       type: str
-
 
     query:
       description: >-
         A count-based (metric) SLO query. This field is superseded by sli_specification but is retained...
       type: dict
 
-
     sli_specification:
       description: >-
         A time-slice SLI specification.
       type: dict
-
 
     tags:
       description: >-
         A list of tags associated with this service level objective. Always included in service level...
       type: list
 
-
     target_threshold:
       description: >-
         The target threshold such that when the service level indicator is above this threshold over the...
       type: float
-
 
     thresholds:
       description: >-
         The thresholds (timeframes and associated targets) for this service level objective object.
       type: list
 
-
     timeframe:
       description: >-
         The SLO time window options. Note that "custom" is not a valid option for creating or updating...
       type: str
-
 
     type:
       description: >-
         The type of the service level objective.
       type: str
 
-
     warning_threshold:
       description: >-
         The optional warning threshold such that when the service level indicator is below this value...
       type: float
-
 
 """
 
@@ -231,7 +176,6 @@ from ansible_collections.stevefulme1.datadog.plugins.module_utils.api_client imp
     ClientError,
     argument_spec as auth_argument_spec,
 )
-
 
 def fetch_single(client, identifier):
     """Retrieve a single slo by identifier."""
@@ -245,54 +189,14 @@ def fetch_single(client, identifier):
             return item
     return None
 
-
-
 def fetch_list(client, module):
     """List slo resources with optional filtering and pagination."""
 
     params = {}
 
-
     name_filter = module.params.get("name")
     if name_filter is not None:
         params["name"] = name_filter
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     page = module.params.get("page")
     page_size = module.params.get("page_size")
@@ -309,8 +213,6 @@ def fetch_list(client, module):
     else:
         return client.get_paginated("/api/v1/slo", params=params)
 
-
-
 def main():
     spec = auth_argument_spec()
     spec.update(
@@ -318,41 +220,6 @@ def main():
             id=dict(type="str", required=False),
 
             name=dict(type="str", required=False),
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
             page=dict(type="int", required=False),
             page_size=dict(type="int", required=False),
@@ -387,7 +254,6 @@ def main():
         module.fail_json(msg=str(e), **result)
 
     module.exit_json(**result)
-
 
 if __name__ == "__main__":
     main()

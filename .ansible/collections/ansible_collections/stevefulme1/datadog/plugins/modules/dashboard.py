@@ -35,10 +35,6 @@ options:
 
     required: true
 
-
-
-
-
   layout_type:
     description:
       - >-
@@ -47,11 +43,7 @@ options:
 
     required: true
 
-
     choices: ["ordered", "free"]
-
-
-
 
   title:
     description:
@@ -60,10 +52,6 @@ options:
     type: str
 
     required: true
-
-
-
-
 
   widgets:
     description:
@@ -74,19 +62,11 @@ options:
 
     required: true
 
-
-
-
-
   author_handle:
     description:
       - >-
         Identifier of the dashboard author.
     type: str
-
-
-
-
 
   author_name:
     description:
@@ -94,19 +74,11 @@ options:
         Name of the dashboard author.
     type: str
 
-
-
-
-
   created_at:
     description:
       - >-
         Creation date of the dashboard.
     type: str
-
-
-
-
 
   description:
     description:
@@ -114,19 +86,11 @@ options:
         Description of the dashboard.
     type: str
 
-
-
-
-
   id:
     description:
       - >-
         ID of the dashboard.
     type: str
-
-
-
-
 
   is_read_only:
     description:
@@ -134,19 +98,11 @@ options:
         Whether this dashboard is read-only. If True, only the author and admins can make changes to it....
     type: bool
 
-
-
-
-
   modified_at:
     description:
       - >-
         Modification date of the dashboard.
     type: str
-
-
-
-
 
   notify_list:
     description:
@@ -155,21 +111,13 @@ options:
     type: list
     elements: str
 
-
-
-
-
   reflow_type:
     description:
       - >-
         Reflow type for a new dashboard layout dashboard. Set this only when layout type is 'ordered'....
     type: str
 
-
     choices: ["auto", "fixed"]
-
-
-
 
   restricted_roles:
     description:
@@ -178,20 +126,12 @@ options:
     type: list
     elements: str
 
-
-
-
-
   tabs:
     description:
       - >-
         List of tabs for organizing dashboard widgets into groups.
     type: list
     elements: str
-
-
-
-
 
   tags:
     description:
@@ -200,20 +140,12 @@ options:
     type: list
     elements: str
 
-
-
-
-
   template_variable_presets:
     description:
       - >-
         Array of template variables saved views.
     type: list
     elements: str
-
-
-
-
 
   template_variables:
     description:
@@ -222,19 +154,11 @@ options:
     type: list
     elements: str
 
-
-
-
-
   url:
     description:
       - >-
         The URL of the dashboard.
     type: str
-
-
-
-
 
 extends_documentation_fragment:
   - stevefulme1.datadog.auth
@@ -245,131 +169,51 @@ EXAMPLES = r"""
 - name: Create a dashboard
   stevefulme1.datadog.dashboard:
 
-
     data: "example_data"
-
-
 
     layout_type: "example_layout_type"
 
-
-
     title: "example_title"
-
-
 
     widgets: "example_widgets"
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     state: present
   # API: POST /api/v1/dashboard
-
-
 
 - name: Update a dashboard
   stevefulme1.datadog.dashboard:
     id: "existing_id"
 
-
-
-
-
-
-
-
-
-
     author_handle: "updated_author_handle"
-
-
 
     author_name: "updated_author_name"
 
-
-
     created_at: "updated_created_at"
-
-
 
     description: "updated_description"
 
-
-
-
-
     is_read_only: "updated_is_read_only"
-
-
 
     modified_at: "updated_modified_at"
 
-
-
     notify_list: "updated_notify_list"
-
-
 
     reflow_type: "updated_reflow_type"
 
-
-
     restricted_roles: "updated_restricted_roles"
-
-
 
     tabs: "updated_tabs"
 
-
-
     tags: "updated_tags"
-
-
 
     template_variable_presets: "updated_template_variable_presets"
 
-
-
     template_variables: "updated_template_variables"
-
-
 
     url: "updated_url"
 
-
     state: present
-  # API:  
-
-
+  # API:
 
 - name: Delete a dashboard
   stevefulme1.datadog.dashboard:
@@ -387,13 +231,11 @@ author_handle:
   returned: success
   type: str
 
-
 author_name:
   description: >-
     Name of the dashboard author.
   returned: success
   type: str
-
 
 created_at:
   description: >-
@@ -401,13 +243,11 @@ created_at:
   returned: success
   type: str
 
-
 description:
   description: >-
     Description of the dashboard.
   returned: success
   type: str
-
 
 id:
   description: >-
@@ -415,13 +255,11 @@ id:
   returned: success
   type: str
 
-
 is_read_only:
   description: >-
     Whether this dashboard is read-only. If True, only the author and admins can make changes to it....
   returned: success
   type: bool
-
 
 layout_type:
   description: >-
@@ -429,13 +267,11 @@ layout_type:
   returned: success
   type: str
 
-
 modified_at:
   description: >-
     Modification date of the dashboard.
   returned: success
   type: str
-
 
 notify_list:
   description: >-
@@ -443,13 +279,11 @@ notify_list:
   returned: success
   type: list
 
-
 reflow_type:
   description: >-
     Reflow type for a new dashboard layout dashboard. Set this only when layout type is 'ordered'....
   returned: success
   type: str
-
 
 restricted_roles:
   description: >-
@@ -457,13 +291,11 @@ restricted_roles:
   returned: success
   type: list
 
-
 tabs:
   description: >-
     List of tabs for organizing dashboard widgets into groups.
   returned: success
   type: list
-
 
 tags:
   description: >-
@@ -471,13 +303,11 @@ tags:
   returned: success
   type: list
 
-
 template_variable_presets:
   description: >-
     Array of template variables saved views.
   returned: success
   type: list
-
 
 template_variables:
   description: >-
@@ -485,13 +315,11 @@ template_variables:
   returned: success
   type: list
 
-
 title:
   description: >-
     Title of the dashboard.
   returned: success
   type: str
-
 
 url:
   description: >-
@@ -499,13 +327,11 @@ url:
   returned: success
   type: str
 
-
 widgets:
   description: >-
     List of widgets to display on the dashboard.
   returned: success
   type: list
-
 
 """
 
@@ -515,7 +341,6 @@ from ansible_collections.stevefulme1.datadog.plugins.module_utils.api_client imp
     ClientError,
     argument_spec as auth_argument_spec,
 )
-
 
 def get_current_state(client, module):
     """Retrieve the current state of the dashboard via GET."""
@@ -542,8 +367,6 @@ def get_current_state(client, module):
     except ClientError:
         return None
 
-
-
 def needs_update(current, desired):
     """Compare current state against desired params and return True if an update is needed."""
     if current is None:
@@ -555,7 +378,6 @@ def needs_update(current, desired):
         if current_value != value:
             return True
     return False
-
 
 def build_payload(module):
     """Build the API request payload from module params."""
@@ -620,7 +442,6 @@ def build_payload(module):
 
     return payload
 
-
 def main():
     spec = auth_argument_spec()
     spec.update(
@@ -632,10 +453,6 @@ def main():
 
                 required=True,
 
-
-
-
-
             ),
 
             layout_type=dict(
@@ -643,11 +460,7 @@ def main():
 
                 required=True,
 
-
                 choices=['ordered', 'free'],
-
-
-
 
             ),
 
@@ -656,10 +469,6 @@ def main():
 
                 required=True,
 
-
-
-
-
             ),
 
             widgets=dict(
@@ -667,146 +476,82 @@ def main():
 
                 required=True,
 
-
-
-
-
             ),
 
             author_handle=dict(
                 type="str",
-
-
-
-
 
             ),
 
             author_name=dict(
                 type="str",
 
-
-
-
-
             ),
 
             created_at=dict(
                 type="str",
-
-
-
-
 
             ),
 
             description=dict(
                 type="str",
 
-
-
-
-
             ),
 
             id=dict(
                 type="str",
-
-
-
-
 
             ),
 
             is_read_only=dict(
                 type="bool",
 
-
-
-
-
             ),
 
             modified_at=dict(
                 type="str",
-
-
-
-
 
             ),
 
             notify_list=dict(
                 type="list", elements="str",
 
-
-
-
-
             ),
 
             reflow_type=dict(
                 type="str",
 
-
                 choices=['auto', 'fixed'],
-
-
-
 
             ),
 
             restricted_roles=dict(
                 type="list", elements="str",
 
-
-
-
-
             ),
 
             tabs=dict(
                 type="list", elements="str",
-
-
-
-
 
             ),
 
             tags=dict(
                 type="list", elements="str",
 
-
-
-
-
             ),
 
             template_variable_presets=dict(
                 type="list", elements="str",
-
-
-
-
 
             ),
 
             template_variables=dict(
                 type="list", elements="str",
 
-
-
-
-
             ),
 
             url=dict(
                 type="str",
-
-
-
-
 
             ),
 
@@ -843,7 +588,6 @@ def main():
                     )
                     result.update(response if isinstance(response, dict) else {})
 
-
             elif needs_update(current, desired):
                 # Resource exists but needs updating
                 result["changed"] = True
@@ -861,7 +605,6 @@ def main():
                         data=desired,
                     )
                     result.update(response if isinstance(response, dict) else {})
-
 
             else:
                 # Resource exists and is up-to-date
@@ -902,7 +645,6 @@ def main():
 
                 result["widgets"] = current.get("widgets")
 
-
         elif state == "absent":
             if current is not None:
                 result["changed"] = True
@@ -917,12 +659,10 @@ def main():
                     )
                     client.delete(path)
 
-
     except ClientError as e:
         module.fail_json(msg=str(e), **result)
 
     module.exit_json(**result)
-
 
 if __name__ == "__main__":
     main()

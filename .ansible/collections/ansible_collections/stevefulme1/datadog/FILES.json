@@ -8,6 +8,69 @@
    "format": 1
   },
   {
+   "name": "CODE_OF_CONDUCT.md",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "14ec928234a7ed52bf8b458d31e4862335111e477e4dbe7fb543686c24115140",
+   "format": 1
+  },
+  {
+   "name": ".pytest_cache",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": ".pytest_cache/CACHEDIR.TAG",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "37dc88ef9a0abeddbe81053a6dd8fdfb13afb613045ea1eb4a5c815a74a3bde4",
+   "format": 1
+  },
+  {
+   "name": ".pytest_cache/README.md",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "73fd6fccdd802c419a6b2d983d6c3173b7da97558ac4b589edec2dfe443db9ad",
+   "format": 1
+  },
+  {
+   "name": ".pytest_cache/.gitignore",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "3ed731b65d06150c138e2dadb0be0697550888a6b47eb8c45ecc9adba8b8e9bd",
+   "format": 1
+  },
+  {
+   "name": ".pytest_cache/v",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": ".pytest_cache/v/cache",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": ".pytest_cache/v/cache/nodeids",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "9d7bd3f18252cc81d62e20e5199250338e3335f239cd9cf80ebfca67095b7fff",
+   "format": 1
+  },
+  {
+   "name": ".pytest_cache/v/cache/lastfailed",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+   "format": 1
+  },
+  {
    "name": "plugins",
    "ftype": "dir",
    "chksum_type": null,
@@ -60,7 +123,7 @@
    "name": "plugins/module_utils/api_client.py",
    "ftype": "file",
    "chksum_type": "sha256",
-   "chksum_sha256": "9fec0f29843607df00ee64819ecfbf7054d00d381ec4edcb1ed8c4df5105abed",
+   "chksum_sha256": "accddaa67d19156b59f6ec35460c1ecbee1b9db0d2da327055c6b073dc338221",
    "format": 1
   },
   {
@@ -74,49 +137,49 @@
    "name": "plugins/modules/user.py",
    "ftype": "file",
    "chksum_type": "sha256",
-   "chksum_sha256": "e666d451f4511f54ebccd8d9a1a831463670d4c806c2f1cb03a56a1b6160336b",
+   "chksum_sha256": "46cd01ea366bf0f9e56160ec1b66e559c28995e91fa44b1fc2b10265c9018aa4",
    "format": 1
   },
   {
    "name": "plugins/modules/downtime_info.py",
    "ftype": "file",
    "chksum_type": "sha256",
-   "chksum_sha256": "04376f50d02fd2998698980be66a9fc324656acebef4034e71e038f6595171c8",
+   "chksum_sha256": "7450b7761ae324aef5ae06dbe6499bbdfccab2812753e5ce6e582d9ef8eb7509",
    "format": 1
   },
   {
    "name": "plugins/modules/monitor_info.py",
    "ftype": "file",
    "chksum_type": "sha256",
-   "chksum_sha256": "d877f5510035702439fb8d8b3b83a772ed6f7e1d2436da06c8aa92083ba3e198",
+   "chksum_sha256": "9afc06e1032ea694261480f34bd4134d909240621e9b41dd33ac387788d5c9b8",
    "format": 1
   },
   {
    "name": "plugins/modules/monitor.py",
    "ftype": "file",
    "chksum_type": "sha256",
-   "chksum_sha256": "5c5bb76a91edb78ccdaad56ed0af81116465d0e790280a551ad16ef0b231e0ed",
+   "chksum_sha256": "c7f90a0bcae304820920a360a81fe747ebd5145356626239eb7c37ab2b6761a5",
    "format": 1
   },
   {
    "name": "plugins/modules/dashboard_info.py",
    "ftype": "file",
    "chksum_type": "sha256",
-   "chksum_sha256": "0619e887aa8406bddb6f88c398f2777ae1af0279aaec30fd33d8a889b73ad0a7",
+   "chksum_sha256": "ac1ed15974d23587a9a621a1829bd9338ff99e206c5b4305e32adfbf6c6fcae0",
    "format": 1
   },
   {
    "name": "plugins/modules/slo_info.py",
    "ftype": "file",
    "chksum_type": "sha256",
-   "chksum_sha256": "79aaa78dbdc992d7d1c9a6d16f9ce2ca6ceaa5de1f6114a07e9acacbebe07dfb",
+   "chksum_sha256": "d31623297187635a9449bf8c67afcb6fe3680c67c5d4399c7580f4a572cb9327",
    "format": 1
   },
   {
    "name": "plugins/modules/config_indexe_info.py",
    "ftype": "file",
    "chksum_type": "sha256",
-   "chksum_sha256": "38f2ed3bf8c4f2bbd70e2613f3c7981fb30e6f021eefdedc70cb5572fe035db0",
+   "chksum_sha256": "9502b5bbbd8553bc1b3d44ccd5f0e973456157f1ba5d19683458d101566e2914",
    "format": 1
   },
   {
@@ -130,77 +193,77 @@
    "name": "plugins/modules/metric_info.py",
    "ftype": "file",
    "chksum_type": "sha256",
-   "chksum_sha256": "35e64b4a398957805bbce0adba9a20c439b4cfb65eb0864a86abc740455bef15",
+   "chksum_sha256": "8449091827b232dc0cc25f7037353ab41ca7cf48742b0c88e547986bd0c15668",
    "format": 1
   },
   {
    "name": "plugins/modules/synthetic_variable.py",
    "ftype": "file",
    "chksum_type": "sha256",
-   "chksum_sha256": "c57edd8e5da654d62ec4ddede547017d6bd48ea5f0ab4fe8a52b8a73b2e8db3e",
+   "chksum_sha256": "528513554444571e2f29466628098a1f6ceac7bef005fa15ac5a29ad1bfe7b55",
    "format": 1
   },
   {
    "name": "plugins/modules/dashboard.py",
    "ftype": "file",
    "chksum_type": "sha256",
-   "chksum_sha256": "aad8d83d831b196107e9bbd5ccb05bc2b22e74bcee337fdbf62abf70362c8d44",
+   "chksum_sha256": "5b6ac55f6530acbae358453674b826f3f96ec5bf8a48d6998ff08a2d305403ef",
    "format": 1
   },
   {
    "name": "plugins/modules/metric.py",
    "ftype": "file",
    "chksum_type": "sha256",
-   "chksum_sha256": "b58a9b200feaa5c6752b4c2cc6163d50f4b520dc1fd21101649bc9c5317afa08",
+   "chksum_sha256": "8c6a6fdfc6c50af96cc1a74d41a7b57fd8b98593ab479132712e6753727aa8b6",
    "format": 1
   },
   {
    "name": "plugins/modules/downtime.py",
    "ftype": "file",
    "chksum_type": "sha256",
-   "chksum_sha256": "bcdef5d1fe2c0d8b0cc67da6c4042de24ba19379aabbcbf4d2b8951c6585f591",
+   "chksum_sha256": "9794f2bafed86fff5c94517a50dca6f72ef7909e8c6b7730cec62b05cbf77401",
    "format": 1
   },
   {
    "name": "plugins/modules/config_indexe.py",
    "ftype": "file",
    "chksum_type": "sha256",
-   "chksum_sha256": "6562d873b30c9e79e3cd1e4a04394b1be73f4727c4beabda08320ede73cd4847",
+   "chksum_sha256": "9c0edf20f6d60abf7a397ae8f47ed4bf2ebada643f06c1286cc0e357a06a3074",
    "format": 1
   },
   {
    "name": "plugins/modules/user_info.py",
    "ftype": "file",
    "chksum_type": "sha256",
-   "chksum_sha256": "3caaaddb93f8c2fc44af50df10c728e3a01e94be1ee600129eeb48d1e005477d",
+   "chksum_sha256": "216615a4a57ac13b97939718f4a37ee46f20367e14c2a3e64eb8a24aeb82dbbe",
    "format": 1
   },
   {
    "name": "plugins/modules/synthetic_test_info.py",
    "ftype": "file",
    "chksum_type": "sha256",
-   "chksum_sha256": "f20f76a66812b56b4e4e3cb4d41e94198e79b33f7cf9f8c518bd2f8de8f501a0",
+   "chksum_sha256": "8e70e0b511ce6a45d4a1c85cab66264f9f77af9d934b8793f1c85ef018b2cb9f",
    "format": 1
   },
   {
    "name": "plugins/modules/synthetic_variable_info.py",
    "ftype": "file",
    "chksum_type": "sha256",
-   "chksum_sha256": "814fd347c1f0e8c1e265082b1c74bd0e5aa1dd005922bd3211644ebaf3b90c27",
+   "chksum_sha256": "1e958d7583368b309d23f92fa0db8f183d999c2e54ca4bac520a7d5f8f435a90",
    "format": 1
   },
   {
    "name": "plugins/modules/slo.py",
    "ftype": "file",
    "chksum_type": "sha256",
-   "chksum_sha256": "8b1a28365f744862e6dfd956ef809be81d38ad975e4d4f6a173c3407d6d01ef7",
+   "chksum_sha256": "0011e7fa687399f09172dfc57264eac3de3b114b974246d98b5dd79f67feebc5",
    "format": 1
   },
   {
    "name": "plugins/modules/synthetic_test.py",
    "ftype": "file",
    "chksum_type": "sha256",
-   "chksum_sha256": "3818d768bff12cf5263fc2efacfca32310c0e15a6c7334cf3ead41a3c8bdda6f",
+   "chksum_sha256": "b87bca578b2ff01cad4aff999d7a2528cf3072e3330ac46e50a0e6300ef2b9b1",
    "format": 1
   },
   {
@@ -211,10 +274,1683 @@
    "format": 1
   },
   {
+   "name": "MAINTAINERS.md",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "30ca901549a17a26d3419ccad3db8bf7cea0ad076eb31ff703f0911ef9c16809",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/CODE_OF_CONDUCT.md",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "14ec928234a7ed52bf8b458d31e4862335111e477e4dbe7fb543686c24115140",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.pytest_cache",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.pytest_cache/CACHEDIR.TAG",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "37dc88ef9a0abeddbe81053a6dd8fdfb13afb613045ea1eb4a5c815a74a3bde4",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.pytest_cache/README.md",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "73fd6fccdd802c419a6b2d983d6c3173b7da97558ac4b589edec2dfe443db9ad",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.pytest_cache/.gitignore",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "3ed731b65d06150c138e2dadb0be0697550888a6b47eb8c45ecc9adba8b8e9bd",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.pytest_cache/v",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.pytest_cache/v/cache",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.pytest_cache/v/cache/nodeids",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "9d7bd3f18252cc81d62e20e5199250338e3335f239cd9cf80ebfca67095b7fff",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.pytest_cache/v/cache/lastfailed",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/plugins",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/plugins/doc_fragments",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/plugins/doc_fragments/auth.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "c82e3f35767f25532737fea9d03b088710474998063e82d4c9a88025730a2cd9",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/plugins/doc_fragments/__init__.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/plugins/__init__.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/plugins/module_utils",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/plugins/module_utils/__init__.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/plugins/module_utils/api_client.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "9fec0f29843607df00ee64819ecfbf7054d00d381ec4edcb1ed8c4df5105abed",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/plugins/modules",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/plugins/modules/user.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "e666d451f4511f54ebccd8d9a1a831463670d4c806c2f1cb03a56a1b6160336b",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/plugins/modules/downtime_info.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "04376f50d02fd2998698980be66a9fc324656acebef4034e71e038f6595171c8",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/plugins/modules/monitor_info.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "d877f5510035702439fb8d8b3b83a772ed6f7e1d2436da06c8aa92083ba3e198",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/plugins/modules/monitor.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "5c5bb76a91edb78ccdaad56ed0af81116465d0e790280a551ad16ef0b231e0ed",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/plugins/modules/dashboard_info.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "0619e887aa8406bddb6f88c398f2777ae1af0279aaec30fd33d8a889b73ad0a7",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/plugins/modules/slo_info.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "79aaa78dbdc992d7d1c9a6d16f9ce2ca6ceaa5de1f6114a07e9acacbebe07dfb",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/plugins/modules/config_indexe_info.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "38f2ed3bf8c4f2bbd70e2613f3c7981fb30e6f021eefdedc70cb5572fe035db0",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/plugins/modules/__init__.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/plugins/modules/metric_info.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "35e64b4a398957805bbce0adba9a20c439b4cfb65eb0864a86abc740455bef15",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/plugins/modules/synthetic_variable.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "c57edd8e5da654d62ec4ddede547017d6bd48ea5f0ab4fe8a52b8a73b2e8db3e",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/plugins/modules/dashboard.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "aad8d83d831b196107e9bbd5ccb05bc2b22e74bcee337fdbf62abf70362c8d44",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/plugins/modules/metric.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "b58a9b200feaa5c6752b4c2cc6163d50f4b520dc1fd21101649bc9c5317afa08",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/plugins/modules/downtime.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "bcdef5d1fe2c0d8b0cc67da6c4042de24ba19379aabbcbf4d2b8951c6585f591",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/plugins/modules/config_indexe.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "6562d873b30c9e79e3cd1e4a04394b1be73f4727c4beabda08320ede73cd4847",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/plugins/modules/user_info.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "3caaaddb93f8c2fc44af50df10c728e3a01e94be1ee600129eeb48d1e005477d",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/plugins/modules/synthetic_test_info.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "f20f76a66812b56b4e4e3cb4d41e94198e79b33f7cf9f8c518bd2f8de8f501a0",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/plugins/modules/synthetic_variable_info.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "814fd347c1f0e8c1e265082b1c74bd0e5aa1dd005922bd3211644ebaf3b90c27",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/plugins/modules/slo.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "8b1a28365f744862e6dfd956ef809be81d38ad975e4d4f6a173c3407d6d01ef7",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/plugins/modules/synthetic_test.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "3818d768bff12cf5263fc2efacfca32310c0e15a6c7334cf3ead41a3c8bdda6f",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.yamllint",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "487c29cf3ba0197aec3a5cb7f9533a5298f055010625cc2528ac83c7a30268df",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/MAINTAINERS.md",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "30ca901549a17a26d3419ccad3db8bf7cea0ad076eb31ff703f0911ef9c16809",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.test_namespace",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.test_namespace/ansible_collections",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.test_namespace/ansible_collections/stevefulme1",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/tests",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/tests/unit",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/tests/unit/conftest.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "cdf90b8bc175f93b01cc0426ab2845c36010f926f8dd6002cf0704be78c6006f",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/tests/unit/plugins",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/tests/unit/plugins/__init__.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/tests/unit/plugins/modules",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/tests/unit/plugins/modules/test_metric.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "1d068802ce787daf3aa1e3737e9c303778d4406dc5246bb131f7f822861c6562",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/tests/unit/plugins/modules/test_monitor.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "345633b2c550428a657f3189ecd98ff4030ca8ff548f2fcbd78fc168656b8702",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/tests/unit/plugins/modules/test_user.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "ee6b40e561355345960d314d7cc9e7664111d43685d8933a9d011ec983dc0271",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/tests/unit/plugins/modules/test_synthetic_test.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "29676665b0d9af7919b0b03562c113c7e5bac78bb46a50b3dbe4375b83c3eca0",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/tests/unit/plugins/modules/test_dashboard.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "9365dcc6c7845b66b463be64e596e62e394eb39c42ea7e96b4b759e5c2e196db",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/tests/unit/plugins/modules/test_synthetic_variable.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "46f18134cc61227d310d4840e36f6b6585c0e816a62cfcf3c9f43f9e4e2450bc",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/tests/unit/plugins/modules/__init__.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/tests/unit/plugins/modules/test_config_indexe.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "d557e49ff73293320bef776104a527f0712076890875af7c773eb8e9c22c45d6",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/tests/unit/plugins/modules/test_slo.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "e43a2e3c593ccf5ef9f4b760a1592be0d74d1c9d80e8f3a152eeadf238f12906",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/tests/unit/plugins/modules/test_downtime.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "4b58906137098096bfa48208be348a05e319b9b467cf7264ea5afb5e6431dba1",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/tests/unit/__init__.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/tests/integration",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/tests/integration/targets",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/tests/integration/targets/monitor",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/tests/integration/targets/monitor/tasks",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/tests/integration/targets/monitor/tasks/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "b794a0394e75fbdf78adbe71d4b77acc1235f2eb570268ca05a7a8474eb8e325",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/tests/integration/targets/user",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/tests/integration/targets/user/tasks",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/tests/integration/targets/user/tasks/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "98b3962d20f3d1536fb84f83e45f3bd07e4f43421cb0b8ae2564bf3df6f3e08c",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/tests/integration/targets/dashboard",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/tests/integration/targets/dashboard/tasks",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/tests/integration/targets/dashboard/tasks/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "b2ae006489c45cd6f08e7aca90ea498920f3f1b25d07b6d3a429554974ec170a",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/tests/integration/targets/downtime",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/tests/integration/targets/downtime/tasks",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/tests/integration/targets/downtime/tasks/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "5c773d1215dab3fe64a26f291bb98bffc8e4d018e57dbd8bf6ddbc525f987c00",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/tests/integration/targets/synthetic_variable",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/tests/integration/targets/synthetic_variable/tasks",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/tests/integration/targets/synthetic_variable/tasks/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "916b2559ff39d664d96fc9f0f507bdcffc13548c91813aef557017005d0a801d",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/tests/integration/targets/slo",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/tests/integration/targets/slo/tasks",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/tests/integration/targets/slo/tasks/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "c7a51a4afb169a314759fd50b40aff7315e5f651ad915b6ce38a0d3f9c9a66c0",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/tests/integration/targets/config_indexe",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/tests/integration/targets/config_indexe/tasks",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/tests/integration/targets/config_indexe/tasks/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "875f1785b0581781c92095c93f4af89233d8df84104da5195c3349c35929ec12",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/tests/integration/targets/synthetic_test",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/tests/integration/targets/synthetic_test/tasks",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/tests/integration/targets/synthetic_test/tasks/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "7a8f03b03e91ac05381e03c9e492f05f495387b06ed1f8818c0c272e5df14ef1",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/tests/integration/targets/metric",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/tests/integration/targets/metric/tasks",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/tests/integration/targets/metric/tasks/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "8860ace3a183a0bf579c8625b8f3f677a5ae364f7fac16266d8a8fd8664ab405",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/meta",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/meta/runtime.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "6698ae10ace1bbeba03d0d3df5feecfacb40c830b67544a79a31ab889d16427f",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/changelogs",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/changelogs/config.yaml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "6f9efe0e8e2e7f3a7d3fe510b86d155c1466f934d752c28834f6b2b6207ed6fa",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/COPYING",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "0ae0485a5bd37a63e63603596417e4eb0e653334fa6c7f932ca3a0e85d4af227",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.gitignore",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "3d24136d515f1734d3ce86a3c64fffc1fa3f02b3792a3930ef16fcf8653f6661",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/CONTRIBUTING.md",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "1c8267966b054ae496d7034896c481eee92af87f02c83ef77f2c1ec4a58e5ab5",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/roles",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/modules",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/CODE_OF_CONDUCT.md",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "14ec928234a7ed52bf8b458d31e4862335111e477e4dbe7fb543686c24115140",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/.pytest_cache",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/.pytest_cache/CACHEDIR.TAG",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "37dc88ef9a0abeddbe81053a6dd8fdfb13afb613045ea1eb4a5c815a74a3bde4",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/.pytest_cache/README.md",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "73fd6fccdd802c419a6b2d983d6c3173b7da97558ac4b589edec2dfe443db9ad",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/.pytest_cache/.gitignore",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "3ed731b65d06150c138e2dadb0be0697550888a6b47eb8c45ecc9adba8b8e9bd",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/.pytest_cache/v",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/.pytest_cache/v/cache",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/.pytest_cache/v/cache/nodeids",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "9d7bd3f18252cc81d62e20e5199250338e3335f239cd9cf80ebfca67095b7fff",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/.pytest_cache/v/cache/lastfailed",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/plugins",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/plugins/doc_fragments",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/plugins/doc_fragments/auth.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "c82e3f35767f25532737fea9d03b088710474998063e82d4c9a88025730a2cd9",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/plugins/doc_fragments/__init__.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/plugins/__init__.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/plugins/module_utils",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/plugins/module_utils/__init__.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/plugins/module_utils/api_client.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "9fec0f29843607df00ee64819ecfbf7054d00d381ec4edcb1ed8c4df5105abed",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/plugins/modules",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/plugins/modules/user.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "e666d451f4511f54ebccd8d9a1a831463670d4c806c2f1cb03a56a1b6160336b",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/plugins/modules/downtime_info.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "04376f50d02fd2998698980be66a9fc324656acebef4034e71e038f6595171c8",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/plugins/modules/monitor_info.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "d877f5510035702439fb8d8b3b83a772ed6f7e1d2436da06c8aa92083ba3e198",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/plugins/modules/monitor.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "5c5bb76a91edb78ccdaad56ed0af81116465d0e790280a551ad16ef0b231e0ed",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/plugins/modules/dashboard_info.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "0619e887aa8406bddb6f88c398f2777ae1af0279aaec30fd33d8a889b73ad0a7",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/plugins/modules/slo_info.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "79aaa78dbdc992d7d1c9a6d16f9ce2ca6ceaa5de1f6114a07e9acacbebe07dfb",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/plugins/modules/config_indexe_info.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "38f2ed3bf8c4f2bbd70e2613f3c7981fb30e6f021eefdedc70cb5572fe035db0",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/plugins/modules/__init__.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/plugins/modules/metric_info.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "35e64b4a398957805bbce0adba9a20c439b4cfb65eb0864a86abc740455bef15",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/plugins/modules/synthetic_variable.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "c57edd8e5da654d62ec4ddede547017d6bd48ea5f0ab4fe8a52b8a73b2e8db3e",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/plugins/modules/dashboard.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "aad8d83d831b196107e9bbd5ccb05bc2b22e74bcee337fdbf62abf70362c8d44",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/plugins/modules/metric.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "b58a9b200feaa5c6752b4c2cc6163d50f4b520dc1fd21101649bc9c5317afa08",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/plugins/modules/downtime.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "bcdef5d1fe2c0d8b0cc67da6c4042de24ba19379aabbcbf4d2b8951c6585f591",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/plugins/modules/config_indexe.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "6562d873b30c9e79e3cd1e4a04394b1be73f4727c4beabda08320ede73cd4847",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/plugins/modules/user_info.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "3caaaddb93f8c2fc44af50df10c728e3a01e94be1ee600129eeb48d1e005477d",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/plugins/modules/synthetic_test_info.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "f20f76a66812b56b4e4e3cb4d41e94198e79b33f7cf9f8c518bd2f8de8f501a0",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/plugins/modules/synthetic_variable_info.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "814fd347c1f0e8c1e265082b1c74bd0e5aa1dd005922bd3211644ebaf3b90c27",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/plugins/modules/slo.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "8b1a28365f744862e6dfd956ef809be81d38ad975e4d4f6a173c3407d6d01ef7",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/plugins/modules/synthetic_test.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "3818d768bff12cf5263fc2efacfca32310c0e15a6c7334cf3ead41a3c8bdda6f",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/.yamllint",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "487c29cf3ba0197aec3a5cb7f9533a5298f055010625cc2528ac83c7a30268df",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/MAINTAINERS.md",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "30ca901549a17a26d3419ccad3db8bf7cea0ad076eb31ff703f0911ef9c16809",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/.test_namespace",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/.test_namespace/ansible_collections",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/.test_namespace/ansible_collections/stevefulme1",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/tests",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/tests/unit",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/tests/unit/conftest.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "cdf90b8bc175f93b01cc0426ab2845c36010f926f8dd6002cf0704be78c6006f",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/tests/unit/plugins",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/tests/unit/plugins/__init__.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/tests/unit/plugins/modules",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/tests/unit/plugins/modules/test_metric.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "1d068802ce787daf3aa1e3737e9c303778d4406dc5246bb131f7f822861c6562",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/tests/unit/plugins/modules/test_monitor.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "345633b2c550428a657f3189ecd98ff4030ca8ff548f2fcbd78fc168656b8702",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/tests/unit/plugins/modules/test_user.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "ee6b40e561355345960d314d7cc9e7664111d43685d8933a9d011ec983dc0271",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/tests/unit/plugins/modules/test_synthetic_test.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "29676665b0d9af7919b0b03562c113c7e5bac78bb46a50b3dbe4375b83c3eca0",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/tests/unit/plugins/modules/test_dashboard.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "9365dcc6c7845b66b463be64e596e62e394eb39c42ea7e96b4b759e5c2e196db",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/tests/unit/plugins/modules/test_synthetic_variable.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "46f18134cc61227d310d4840e36f6b6585c0e816a62cfcf3c9f43f9e4e2450bc",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/tests/unit/plugins/modules/__init__.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/tests/unit/plugins/modules/test_config_indexe.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "d557e49ff73293320bef776104a527f0712076890875af7c773eb8e9c22c45d6",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/tests/unit/plugins/modules/test_slo.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "e43a2e3c593ccf5ef9f4b760a1592be0d74d1c9d80e8f3a152eeadf238f12906",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/tests/unit/plugins/modules/test_downtime.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "4b58906137098096bfa48208be348a05e319b9b467cf7264ea5afb5e6431dba1",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/tests/unit/__init__.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/tests/integration",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/tests/integration/targets",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/tests/integration/targets/monitor",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/tests/integration/targets/monitor/tasks",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/tests/integration/targets/monitor/tasks/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "b794a0394e75fbdf78adbe71d4b77acc1235f2eb570268ca05a7a8474eb8e325",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/tests/integration/targets/user",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/tests/integration/targets/user/tasks",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/tests/integration/targets/user/tasks/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "98b3962d20f3d1536fb84f83e45f3bd07e4f43421cb0b8ae2564bf3df6f3e08c",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/tests/integration/targets/dashboard",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/tests/integration/targets/dashboard/tasks",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/tests/integration/targets/dashboard/tasks/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "b2ae006489c45cd6f08e7aca90ea498920f3f1b25d07b6d3a429554974ec170a",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/tests/integration/targets/downtime",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/tests/integration/targets/downtime/tasks",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/tests/integration/targets/downtime/tasks/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "5c773d1215dab3fe64a26f291bb98bffc8e4d018e57dbd8bf6ddbc525f987c00",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/tests/integration/targets/synthetic_variable",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/tests/integration/targets/synthetic_variable/tasks",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/tests/integration/targets/synthetic_variable/tasks/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "916b2559ff39d664d96fc9f0f507bdcffc13548c91813aef557017005d0a801d",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/tests/integration/targets/slo",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/tests/integration/targets/slo/tasks",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/tests/integration/targets/slo/tasks/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "c7a51a4afb169a314759fd50b40aff7315e5f651ad915b6ce38a0d3f9c9a66c0",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/tests/integration/targets/config_indexe",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/tests/integration/targets/config_indexe/tasks",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/tests/integration/targets/config_indexe/tasks/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "875f1785b0581781c92095c93f4af89233d8df84104da5195c3349c35929ec12",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/tests/integration/targets/synthetic_test",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/tests/integration/targets/synthetic_test/tasks",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/tests/integration/targets/synthetic_test/tasks/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "7a8f03b03e91ac05381e03c9e492f05f495387b06ed1f8818c0c272e5df14ef1",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/tests/integration/targets/metric",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/tests/integration/targets/metric/tasks",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/tests/integration/targets/metric/tasks/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "8860ace3a183a0bf579c8625b8f3f677a5ae364f7fac16266d8a8fd8664ab405",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/meta",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/meta/runtime.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "6698ae10ace1bbeba03d0d3df5feecfacb40c830b67544a79a31ab889d16427f",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/changelogs",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/changelogs/config.yaml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "6f9efe0e8e2e7f3a7d3fe510b86d155c1466f934d752c28834f6b2b6207ed6fa",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/COPYING",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "0ae0485a5bd37a63e63603596417e4eb0e653334fa6c7f932ca3a0e85d4af227",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/FILES.json",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "fb79ceb39f71202e0ea299c70a000dd8e0732cb3722ea09e258cdedf0de19558",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/.gitignore",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "3d24136d515f1734d3ce86a3c64fffc1fa3f02b3792a3930ef16fcf8653f6661",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/CONTRIBUTING.md",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "1c8267966b054ae496d7034896c481eee92af87f02c83ef77f2c1ec4a58e5ab5",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/.ansible",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/.ansible/.lock",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/.ansible/roles",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/.ansible/modules",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/.ansible/collections",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/.ansible/collections/ansible_collections",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/.ansible/collections/ansible_collections/stevefulme1",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/.github",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/.github/workflows",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/.github/workflows/ci.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "ba48af4fd7824634c27d98afc5a51890345b88416476143509e5c3b826be5dea",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/MANIFEST.json",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "8fa8245cd3cbcdf8b430ea882953fa3d578d053d10c1e90bab6ec6419d9e3a8b",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/CHANGELOG.rst",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "95b33ae4c026f43736b18a0ed7c84162162389e8f6779efdbf9ecef43186c6b2",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.ansible/collections/ansible_collections/stevefulme1/datadog/SECURITY.md",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "6937b6fa4fb94822e50a0892077c12083fa516c3822691f0f3df7981289092ef",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.github",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.github/workflows",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/.github/workflows/ci.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "ba48af4fd7824634c27d98afc5a51890345b88416476143509e5c3b826be5dea",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/CHANGELOG.rst",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "95b33ae4c026f43736b18a0ed7c84162162389e8f6779efdbf9ecef43186c6b2",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/galaxy.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "88219e14bc1ad19f7a8ecd13bbb7bc6e4cdcf8a2cb976aa32b79f062d9da1902",
+   "format": 1
+  },
+  {
+   "name": "ansible-datadog/SECURITY.md",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "6937b6fa4fb94822e50a0892077c12083fa516c3822691f0f3df7981289092ef",
+   "format": 1
+  },
+  {
+   "name": ".test_namespace",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": ".test_namespace/ansible_collections",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": ".test_namespace/ansible_collections/stevefulme1",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": ".test_namespace/ansible_collections/stevefulme1/datadog",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
    "name": "tests",
    "ftype": "dir",
    "chksum_type": null,
    "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "tests/unit",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "tests/unit/conftest.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "cdf90b8bc175f93b01cc0426ab2845c36010f926f8dd6002cf0704be78c6006f",
+   "format": 1
+  },
+  {
+   "name": "tests/unit/plugins",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "tests/unit/plugins/__init__.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "format": 1
+  },
+  {
+   "name": "tests/unit/plugins/modules",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "tests/unit/plugins/modules/test_metric.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "1d068802ce787daf3aa1e3737e9c303778d4406dc5246bb131f7f822861c6562",
+   "format": 1
+  },
+  {
+   "name": "tests/unit/plugins/modules/test_monitor.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "345633b2c550428a657f3189ecd98ff4030ca8ff548f2fcbd78fc168656b8702",
+   "format": 1
+  },
+  {
+   "name": "tests/unit/plugins/modules/test_user.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "ee6b40e561355345960d314d7cc9e7664111d43685d8933a9d011ec983dc0271",
+   "format": 1
+  },
+  {
+   "name": "tests/unit/plugins/modules/test_synthetic_test.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "29676665b0d9af7919b0b03562c113c7e5bac78bb46a50b3dbe4375b83c3eca0",
+   "format": 1
+  },
+  {
+   "name": "tests/unit/plugins/modules/test_dashboard.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "9365dcc6c7845b66b463be64e596e62e394eb39c42ea7e96b4b759e5c2e196db",
+   "format": 1
+  },
+  {
+   "name": "tests/unit/plugins/modules/test_synthetic_variable.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "46f18134cc61227d310d4840e36f6b6585c0e816a62cfcf3c9f43f9e4e2450bc",
+   "format": 1
+  },
+  {
+   "name": "tests/unit/plugins/modules/__init__.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "format": 1
+  },
+  {
+   "name": "tests/unit/plugins/modules/test_config_indexe.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "d557e49ff73293320bef776104a527f0712076890875af7c773eb8e9c22c45d6",
+   "format": 1
+  },
+  {
+   "name": "tests/unit/plugins/modules/test_slo.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "e43a2e3c593ccf5ef9f4b760a1592be0d74d1c9d80e8f3a152eeadf238f12906",
+   "format": 1
+  },
+  {
+   "name": "tests/unit/plugins/modules/test_downtime.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "4b58906137098096bfa48208be348a05e319b9b467cf7264ea5afb5e6431dba1",
+   "format": 1
+  },
+  {
+   "name": "tests/unit/__init__.py",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
    "format": 1
   },
   {
@@ -421,6 +2157,55 @@
    "format": 1
   },
   {
+   "name": "meta",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "meta/runtime.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "6698ae10ace1bbeba03d0d3df5feecfacb40c830b67544a79a31ab889d16427f",
+   "format": 1
+  },
+  {
+   "name": "changelogs",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "changelogs/config.yaml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "6f9efe0e8e2e7f3a7d3fe510b86d155c1466f934d752c28834f6b2b6207ed6fa",
+   "format": 1
+  },
+  {
+   "name": "COPYING",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "0ae0485a5bd37a63e63603596417e4eb0e653334fa6c7f932ca3a0e85d4af227",
+   "format": 1
+  },
+  {
+   "name": ".gitignore",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "3d24136d515f1734d3ce86a3c64fffc1fa3f02b3792a3930ef16fcf8653f6661",
+   "format": 1
+  },
+  {
+   "name": "CONTRIBUTING.md",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "1c8267966b054ae496d7034896c481eee92af87f02c83ef77f2c1ec4a58e5ab5",
+   "format": 1
+  },
+  {
    "name": ".ansible",
    "ftype": "dir",
    "chksum_type": null,
@@ -488,6 +2273,20 @@
    "ftype": "file",
    "chksum_type": "sha256",
    "chksum_sha256": "ba48af4fd7824634c27d98afc5a51890345b88416476143509e5c3b826be5dea",
+   "format": 1
+  },
+  {
+   "name": "CHANGELOG.rst",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "95b33ae4c026f43736b18a0ed7c84162162389e8f6779efdbf9ecef43186c6b2",
+   "format": 1
+  },
+  {
+   "name": "SECURITY.md",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "6937b6fa4fb94822e50a0892077c12083fa516c3822691f0f3df7981289092ef",
    "format": 1
   }
  ],

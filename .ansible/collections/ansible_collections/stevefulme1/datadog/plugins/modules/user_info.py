@@ -26,21 +26,6 @@ options:
     type: str
     required: false
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   page:
     description:
       - Page number for paginated results.
@@ -67,8 +52,6 @@ EXAMPLES = r"""
   stevefulme1.datadog.user_info:
   register: result
 
-
-
 - name: List user resources with pagination
   stevefulme1.datadog.user_info:
     page: 1
@@ -89,7 +72,6 @@ users:
         Create, edit, and disable users.
       type: dict
 
-
 """
 
 from ansible.module_utils.basic import AnsibleModule
@@ -98,7 +80,6 @@ from ansible_collections.stevefulme1.datadog.plugins.module_utils.api_client imp
     ClientError,
     argument_spec as auth_argument_spec,
 )
-
 
 def fetch_single(client, identifier):
     """Retrieve a single user by identifier."""
@@ -112,30 +93,10 @@ def fetch_single(client, identifier):
             return item
     return None
 
-
-
 def fetch_list(client, module):
     """List user resources with optional filtering and pagination."""
 
     params = {}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     page = module.params.get("page")
     page_size = module.params.get("page_size")
@@ -152,28 +113,11 @@ def fetch_list(client, module):
     else:
         return client.get_paginated("/api/v1/user", params=params)
 
-
-
 def main():
     spec = auth_argument_spec()
     spec.update(
         dict(
             id=dict(type="str", required=False),
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
             page=dict(type="int", required=False),
             page_size=dict(type="int", required=False),
@@ -208,7 +152,6 @@ def main():
         module.fail_json(msg=str(e), **result)
 
     module.exit_json(**result)
-
 
 if __name__ == "__main__":
     main()

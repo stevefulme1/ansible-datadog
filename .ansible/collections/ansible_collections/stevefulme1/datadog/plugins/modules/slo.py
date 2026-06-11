@@ -34,10 +34,6 @@ options:
 
     required: true
 
-
-
-
-
   thresholds:
     description:
       - >-
@@ -47,10 +43,6 @@ options:
 
     required: true
 
-
-
-
-
   type:
     description:
       - >-
@@ -59,11 +51,7 @@ options:
 
     required: true
 
-
     choices: ["metric", "monitor", "time_slice"]
-
-
-
 
   created_at:
     description:
@@ -71,29 +59,17 @@ options:
         Creation timestamp (UNIX time in seconds) Always included in service level objective responses.
     type: int
 
-
-
-
-
   creator:
     description:
       - >-
         Object describing the creator of the shared element.
     type: dict
 
-
-
-
-
   description:
     description:
       - >-
         A user-defined description of the service level objective. Always included in service level...
     type: str
-
-
-
-
 
   groups:
     description:
@@ -102,29 +78,17 @@ options:
     type: list
     elements: str
 
-
-
-
-
   id:
     description:
       - >-
         A unique identifier for the service level objective object. Always included in service level...
     type: str
 
-
-
-
-
   modified_at:
     description:
       - >-
         Modification timestamp (UNIX time in seconds) Always included in service level objective responses.
     type: int
-
-
-
-
 
   monitor_ids:
     description:
@@ -133,10 +97,6 @@ options:
     type: list
     elements: str
 
-
-
-
-
   monitor_tags:
     description:
       - >-
@@ -144,29 +104,17 @@ options:
     type: list
     elements: str
 
-
-
-
-
   query:
     description:
       - >-
         A count-based (metric) SLO query. This field is superseded by sli_specification but is retained...
     type: dict
 
-
-
-
-
   sli_specification:
     description:
       - >-
         A time-slice SLI specification.
     type: dict
-
-
-
-
 
   tags:
     description:
@@ -175,19 +123,11 @@ options:
     type: list
     elements: str
 
-
-
-
-
   target_threshold:
     description:
       - >-
         The target threshold such that when the service level indicator is above this threshold over the...
     type: float
-
-
-
-
 
   timeframe:
     description:
@@ -195,21 +135,13 @@ options:
         The SLO time window options. Note that "custom" is not a valid option for creating or updating...
     type: str
 
-
     choices: ["7d", "30d", "90d", "custom"]
-
-
-
 
   warning_threshold:
     description:
       - >-
         The optional warning threshold such that when the service level indicator is below this value...
     type: float
-
-
-
-
 
 extends_documentation_fragment:
   - stevefulme1.datadog.auth
@@ -220,119 +152,47 @@ EXAMPLES = r"""
 - name: Create a slo
   stevefulme1.datadog.slo:
 
-
     name: "example_name"
-
-
 
     thresholds: "example_thresholds"
 
-
-
     type: "example_type"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     state: present
   # API: POST /api/v1/slo
-
-
 
 - name: Update a slo
   stevefulme1.datadog.slo:
     id: "existing_id"
 
-
-
-
-
-
-
-
     created_at: "updated_created_at"
-
-
 
     creator: "updated_creator"
 
-
-
     description: "updated_description"
-
-
 
     groups: "updated_groups"
 
-
-
-
-
     modified_at: "updated_modified_at"
-
-
 
     monitor_ids: "updated_monitor_ids"
 
-
-
     monitor_tags: "updated_monitor_tags"
-
-
 
     query: "updated_query"
 
-
-
     sli_specification: "updated_sli_specification"
-
-
 
     tags: "updated_tags"
 
-
-
     target_threshold: "updated_target_threshold"
-
-
 
     timeframe: "updated_timeframe"
 
-
-
     warning_threshold: "updated_warning_threshold"
 
-
     state: present
-  # API:  
-
-
+  # API:
 
 - name: Delete a slo
   stevefulme1.datadog.slo:
@@ -350,13 +210,11 @@ configured_alert_ids:
   returned: success
   type: list
 
-
 created_at:
   description: >-
     Creation timestamp (UNIX time in seconds) Always included in service level objective responses.
   returned: success
   type: int
-
 
 creator:
   description: >-
@@ -364,13 +222,11 @@ creator:
   returned: success
   type: dict
 
-
 description:
   description: >-
     A user-defined description of the service level objective. Always included in service level...
   returned: success
   type: str
-
 
 groups:
   description: >-
@@ -378,13 +234,11 @@ groups:
   returned: success
   type: list
 
-
 id:
   description: >-
     A unique identifier for the service level objective object. Always included in service level...
   returned: success
   type: str
-
 
 modified_at:
   description: >-
@@ -392,13 +246,11 @@ modified_at:
   returned: success
   type: int
 
-
 monitor_ids:
   description: >-
     A list of monitor ids that defines the scope of a monitor service level objective. Required if...
   returned: success
   type: list
-
 
 monitor_tags:
   description: >-
@@ -406,13 +258,11 @@ monitor_tags:
   returned: success
   type: list
 
-
 name:
   description: >-
     The name of the service level objective object.
   returned: success
   type: str
-
 
 query:
   description: >-
@@ -420,13 +270,11 @@ query:
   returned: success
   type: dict
 
-
 sli_specification:
   description: >-
     A time-slice SLI specification.
   returned: success
   type: dict
-
 
 tags:
   description: >-
@@ -434,13 +282,11 @@ tags:
   returned: success
   type: list
 
-
 target_threshold:
   description: >-
     The target threshold such that when the service level indicator is above this threshold over the...
   returned: success
   type: float
-
 
 thresholds:
   description: >-
@@ -448,13 +294,11 @@ thresholds:
   returned: success
   type: list
 
-
 timeframe:
   description: >-
     The SLO time window options. Note that "custom" is not a valid option for creating or updating...
   returned: success
   type: str
-
 
 type:
   description: >-
@@ -462,13 +306,11 @@ type:
   returned: success
   type: str
 
-
 warning_threshold:
   description: >-
     The optional warning threshold such that when the service level indicator is below this value...
   returned: success
   type: float
-
 
 """
 
@@ -478,7 +320,6 @@ from ansible_collections.stevefulme1.datadog.plugins.module_utils.api_client imp
     ClientError,
     argument_spec as auth_argument_spec,
 )
-
 
 def get_current_state(client, module):
     """Retrieve the current state of the slo via GET."""
@@ -505,8 +346,6 @@ def get_current_state(client, module):
     except ClientError:
         return None
 
-
-
 def needs_update(current, desired):
     """Compare current state against desired params and return True if an update is needed."""
     if current is None:
@@ -518,7 +357,6 @@ def needs_update(current, desired):
         if current_value != value:
             return True
     return False
-
 
 def build_payload(module):
     """Build the API request payload from module params."""
@@ -577,7 +415,6 @@ def build_payload(module):
 
     return payload
 
-
 def main():
     spec = auth_argument_spec()
     spec.update(
@@ -589,20 +426,12 @@ def main():
 
                 required=True,
 
-
-
-
-
             ),
 
             thresholds=dict(
                 type="list", elements="str",
 
                 required=True,
-
-
-
-
 
             ),
 
@@ -611,139 +440,79 @@ def main():
 
                 required=True,
 
-
                 choices=['metric', 'monitor', 'time_slice'],
-
-
-
 
             ),
 
             created_at=dict(
                 type="int",
 
-
-
-
-
             ),
 
             creator=dict(
                 type="dict",
-
-
-
-
 
             ),
 
             description=dict(
                 type="str",
 
-
-
-
-
             ),
 
             groups=dict(
                 type="list", elements="str",
-
-
-
-
 
             ),
 
             id=dict(
                 type="str",
 
-
-
-
-
             ),
 
             modified_at=dict(
                 type="int",
-
-
-
-
 
             ),
 
             monitor_ids=dict(
                 type="list", elements="str",
 
-
-
-
-
             ),
 
             monitor_tags=dict(
                 type="list", elements="str",
-
-
-
-
 
             ),
 
             query=dict(
                 type="dict",
 
-
-
-
-
             ),
 
             sli_specification=dict(
                 type="dict",
-
-
-
-
 
             ),
 
             tags=dict(
                 type="list", elements="str",
 
-
-
-
-
             ),
 
             target_threshold=dict(
                 type="float",
-
-
-
-
 
             ),
 
             timeframe=dict(
                 type="str",
 
-
                 choices=['7d', '30d', '90d', 'custom'],
-
-
-
 
             ),
 
             warning_threshold=dict(
                 type="float",
-
-
-
-
 
             ),
 
@@ -780,7 +549,6 @@ def main():
                     )
                     result.update(response if isinstance(response, dict) else {})
 
-
             elif needs_update(current, desired):
                 # Resource exists but needs updating
                 result["changed"] = True
@@ -798,7 +566,6 @@ def main():
                         data=desired,
                     )
                     result.update(response if isinstance(response, dict) else {})
-
 
             else:
                 # Resource exists and is up-to-date
@@ -839,7 +606,6 @@ def main():
 
                 result["warning_threshold"] = current.get("warning_threshold")
 
-
         elif state == "absent":
             if current is not None:
                 result["changed"] = True
@@ -854,12 +620,10 @@ def main():
                     )
                     client.delete(path)
 
-
     except ClientError as e:
         module.fail_json(msg=str(e), **result)
 
     module.exit_json(**result)
-
 
 if __name__ == "__main__":
     main()
