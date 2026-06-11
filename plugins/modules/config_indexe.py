@@ -420,7 +420,9 @@ def main():
 
                 result["daily_limit_reset"] = current.get("daily_limit_reset")
 
-                result["daily_limit_warning_threshold_percentage"] = current.get("daily_limit_warning_threshold_percentage")
+                result["daily_limit_warning_threshold_percentage"] = current.get(
+                    "daily_limit_warning_threshold_percentage"
+                )
 
                 result["exclusion_filters"] = current.get("exclusion_filters")
 

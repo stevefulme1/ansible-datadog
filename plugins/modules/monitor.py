@@ -542,11 +542,12 @@ def main():
                 type="str",
 
                 choices=[
-                    'composite', 'event alert', 'log alert', 'metric alert', 'process alert', 'query alert',
-                    'rum alert', 'service check', 'synthetics alert', 'trace-analytics alert', 'slo alert', 'event-v2 alert',
-                    'audit alert', 'ci-pipelines alert', 'ci-tests alert', 'error-tracking alert',
-                    'database-monitoring alert', 'network-performance alert', 'cost alert', 'data-quality alert',
-                    'network-path alert', 'data-jobs alert'
+                    'composite', 'event alert', 'log alert', 'metric alert', 'process alert',
+                    'query alert', 'rum alert', 'service check', 'synthetics alert',
+                    'trace-analytics alert', 'slo alert', 'event-v2 alert', 'audit alert',
+                    'ci-pipelines alert', 'ci-tests alert', 'error-tracking alert',
+                    'database-monitoring alert', 'network-performance alert', 'cost alert',
+                    'data-quality alert', 'network-path alert', 'data-jobs alert'
                 ],
 
             ),
