@@ -5,13 +5,6 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
-from ansible_collections.stevefulme1.datadog.plugins.module_utils.api_client import (
-    Client,
-    ClientError,
-    argument_spec as auth_argument_spec,
-)
-from ansible.module_utils.basic import AnsibleModule
-
 __metaclass__ = type
 
 DOCUMENTATION = r"""
@@ -176,6 +169,12 @@ dashboards:
 
 """
 
+from ansible_collections.stevefulme1.datadog.plugins.module_utils.api_client import (
+    Client,
+    ClientError,
+    argument_spec as auth_argument_spec,
+)
+from ansible.module_utils.basic import AnsibleModule
 
 def fetch_single(client, identifier):
     """Retrieve a single dashboard by identifier."""
@@ -188,7 +187,6 @@ def fetch_single(client, identifier):
         if str(item.get("id")) == str(identifier):
             return item
     return None
-
 
 def fetch_list(client, module):
     """List dashboard resources with optional filtering and pagination."""
@@ -213,7 +211,6 @@ def fetch_list(client, module):
         return response if isinstance(response, list) else []
     else:
         return client.get_paginated("/api/v1/dashboard", params=params)
-
 
 def main():
     spec = auth_argument_spec()
@@ -256,7 +253,6 @@ def main():
         module.fail_json(msg=str(e), **result)
 
     module.exit_json(**result)
-
 
 if __name__ == "__main__":
     main()
