@@ -12,47 +12,13 @@
       data: "{{ test_data | default('test_data_value') }}"
 
 
-
       layout_type: "{{ test_layout_type | default('test_layout_type_value') }}"
-
 
 
       title: "{{ test_title | default('test_title_value') }}"
 
 
-
       widgets: "{{ test_widgets | default('test_widgets_value') }}"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 # ============================================================
@@ -75,43 +41,7 @@
   stevefulme1.datadog.dashboard_info:
 
 
-
-
-
-
     title: "{{ test_title | default('test_title_value') }}"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   register: check_verify
@@ -173,46 +103,13 @@
       - info_result.dashboards[0].data == test_dashboard_params.data
 
 
-
       - info_result.dashboards[0].layout_type == test_dashboard_params.layout_type
-
 
 
       - info_result.dashboards[0].title == test_dashboard_params.title
 
 
-
       - info_result.dashboards[0].widgets == test_dashboard_params.widgets
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     fail_msg: "Created resource does not match expected values"
@@ -220,59 +117,6 @@
 # ============================================================
 # UPDATE
 # ============================================================
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 - name: Update dashboard

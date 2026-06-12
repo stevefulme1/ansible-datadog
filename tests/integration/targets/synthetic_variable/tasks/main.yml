@@ -12,27 +12,10 @@
       description: "{{ test_description | default('test_description_value') }}"
 
 
-
       name: "{{ test_name | default('test_name_value') }}"
 
 
-
       tags: "{{ test_tags | default('test_tags_value') }}"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 # ============================================================
@@ -55,25 +38,7 @@
   stevefulme1.datadog.synthetic_variable_info:
 
 
-
-
     name: "{{ test_name | default('test_name_value') }}"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   register: check_verify
@@ -135,26 +100,10 @@
       - info_result.synthetic_variables[0].description == test_synthetic_variable_params.description
 
 
-
       - info_result.synthetic_variables[0].name == test_synthetic_variable_params.name
 
 
-
       - info_result.synthetic_variables[0].tags == test_synthetic_variable_params.tags
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     fail_msg: "Created resource does not match expected values"
@@ -162,29 +111,6 @@
 # ============================================================
 # UPDATE
 # ============================================================
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 - name: Update synthetic_variable

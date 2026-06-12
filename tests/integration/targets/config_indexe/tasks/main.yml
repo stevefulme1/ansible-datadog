@@ -12,27 +12,7 @@
       filter: "{{ test_filter | default('test_filter_value') }}"
 
 
-
       name: "{{ test_name | default('test_name_value') }}"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 # ============================================================
@@ -55,27 +35,7 @@
   stevefulme1.datadog.config_indexe_info:
 
 
-
-
     name: "{{ test_name | default('test_name_value') }}"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   register: check_verify
@@ -137,26 +97,7 @@
       - info_result.config_indexes[0].filter == test_config_indexe_params.filter
 
 
-
       - info_result.config_indexes[0].name == test_config_indexe_params.name
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     fail_msg: "Created resource does not match expected values"
@@ -164,29 +105,6 @@
 # ============================================================
 # UPDATE
 # ============================================================
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 # No optional string parameters available for update testing.

@@ -9,8 +9,6 @@
     test_synthetic_test_params:
 
 
-
-
 # ============================================================
 # CREATE - check mode
 # ============================================================
@@ -29,7 +27,6 @@
 
 - name: Verify synthetic_test was NOT actually created (check mode)
   stevefulme1.datadog.synthetic_test_info:
-
 
 
   register: check_verify
@@ -88,15 +85,11 @@
       - info_result.synthetic_tests | length == 1
 
 
-
     fail_msg: "Created resource does not match expected values"
 
 # ============================================================
 # UPDATE
 # ============================================================
-
-
-
 
 
 # No optional string parameters available for update testing.
