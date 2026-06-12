@@ -10,11 +10,9 @@ license:
   - GPL-3.0-or-later
   - GPL-3.0-or-later
 tags:
-  - datadog
-  - api
-  - v1
-  - collection
   - monitoring
+  - infrastructure
+  - tools
 repository: https://github.com/stevefulme1/ansible-datadog
 build_ignore:
   - tests/output
