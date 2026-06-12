@@ -181,6 +181,7 @@ from ansible_collections.stevefulme1.datadog.plugins.module_utils.api_client imp
 )
 from ansible.module_utils.basic import AnsibleModule
 
+
 def fetch_single(client, identifier):
     """Retrieve a single monitor by identifier."""
 
@@ -192,6 +193,7 @@ def fetch_single(client, identifier):
         if str(item.get("id")) == str(identifier):
             return item
     return None
+
 
 def fetch_list(client, module):
     """List monitor resources with optional filtering and pagination."""
@@ -216,6 +218,7 @@ def fetch_list(client, module):
         return response if isinstance(response, list) else []
     else:
         return client.get_paginated("/api/v1/monitor", params=params)
+
 
 def main():
     spec = auth_argument_spec()
@@ -258,6 +261,7 @@ def main():
         module.fail_json(msg=str(e), **result)
 
     module.exit_json(**result)
+
 
 if __name__ == "__main__":
     main()
